@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/TEP2.dir/main.cpp.o CMakeFiles/TEP2.dir/CTable.cpp.o  -o TEP2 

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/przydasie/CLionProjects/TEP2/CTable.cpp
+CTable.h
+/home/przydasie/CLionProjects/TEP2/CTable.h
+
+/home/przydasie/CLionProjects/TEP2/CTable.h
+string
+-
+iostream
+-
+
