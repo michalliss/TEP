@@ -12,7 +12,6 @@
 class CFileLastError {
 private:
     static bool b_last_error;
-    bool b_is_open;
 public:
     static bool bGetLastError();
 

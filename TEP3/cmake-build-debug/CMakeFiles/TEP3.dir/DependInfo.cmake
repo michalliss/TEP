@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/legusie/Documents/PWR/TEP/TEP3/CFileErrCode.cpp" "/home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug/CMakeFiles/TEP3.dir/CFileErrCode.cpp.o"
-  "/home/legusie/Documents/PWR/TEP/TEP3/CFileLastError.cpp" "/home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug/CMakeFiles/TEP3.dir/CFileLastError.cpp.o"
-  "/home/legusie/Documents/PWR/TEP/TEP3/CFileThrowEx.cpp" "/home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug/CMakeFiles/TEP3.dir/CFileThrowEx.cpp.o"
-  "/home/legusie/Documents/PWR/TEP/TEP3/main.cpp" "/home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug/CMakeFiles/TEP3.dir/main.cpp.o"
+  "/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileErrCode.cpp" "/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug/CMakeFiles/TEP3.dir/CFileErrCode.cpp.o"
+  "/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileLastError.cpp" "/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug/CMakeFiles/TEP3.dir/CFileLastError.cpp.o"
+  "/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileThrowEx.cpp" "/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug/CMakeFiles/TEP3.dir/CFileThrowEx.cpp.o"
+  "/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/main.cpp" "/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug/CMakeFiles/TEP3.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

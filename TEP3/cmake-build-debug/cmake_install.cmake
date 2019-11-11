@@ -1,4 +1,4 @@
-# Install script for directory: /home/legusie/Documents/PWR/TEP/TEP3
+# Install script for directory: /home/przydasie/Documents/GIT_REPOS/TEP/TEP3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

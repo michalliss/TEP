@@ -43,10 +43,10 @@ RM = /opt/clion/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/legusie/Documents/PWR/TEP/TEP3
+CMAKE_SOURCE_DIR = /home/przydasie/Documents/GIT_REPOS/TEP/TEP3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug
+CMAKE_BINARY_DIR = /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TEP3.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/TEP3.dir/flags.make
 
 CMakeFiles/TEP3.dir/main.cpp.o: CMakeFiles/TEP3.dir/flags.make
 CMakeFiles/TEP3.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TEP3.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TEP3.dir/main.cpp.o -c /home/legusie/Documents/PWR/TEP/TEP3/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TEP3.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TEP3.dir/main.cpp.o -c /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/main.cpp
 
 CMakeFiles/TEP3.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TEP3.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/legusie/Documents/PWR/TEP/TEP3/main.cpp > CMakeFiles/TEP3.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/main.cpp > CMakeFiles/TEP3.dir/main.cpp.i
 
 CMakeFiles/TEP3.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TEP3.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/legusie/Documents/PWR/TEP/TEP3/main.cpp -o CMakeFiles/TEP3.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/main.cpp -o CMakeFiles/TEP3.dir/main.cpp.s
 
 CMakeFiles/TEP3.dir/CFileLastError.cpp.o: CMakeFiles/TEP3.dir/flags.make
 CMakeFiles/TEP3.dir/CFileLastError.cpp.o: ../CFileLastError.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TEP3.dir/CFileLastError.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TEP3.dir/CFileLastError.cpp.o -c /home/legusie/Documents/PWR/TEP/TEP3/CFileLastError.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TEP3.dir/CFileLastError.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TEP3.dir/CFileLastError.cpp.o -c /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileLastError.cpp
 
 CMakeFiles/TEP3.dir/CFileLastError.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TEP3.dir/CFileLastError.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/legusie/Documents/PWR/TEP/TEP3/CFileLastError.cpp > CMakeFiles/TEP3.dir/CFileLastError.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileLastError.cpp > CMakeFiles/TEP3.dir/CFileLastError.cpp.i
 
 CMakeFiles/TEP3.dir/CFileLastError.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TEP3.dir/CFileLastError.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/legusie/Documents/PWR/TEP/TEP3/CFileLastError.cpp -o CMakeFiles/TEP3.dir/CFileLastError.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileLastError.cpp -o CMakeFiles/TEP3.dir/CFileLastError.cpp.s
 
 CMakeFiles/TEP3.dir/CFileThrowEx.cpp.o: CMakeFiles/TEP3.dir/flags.make
 CMakeFiles/TEP3.dir/CFileThrowEx.cpp.o: ../CFileThrowEx.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TEP3.dir/CFileThrowEx.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TEP3.dir/CFileThrowEx.cpp.o -c /home/legusie/Documents/PWR/TEP/TEP3/CFileThrowEx.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TEP3.dir/CFileThrowEx.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TEP3.dir/CFileThrowEx.cpp.o -c /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileThrowEx.cpp
 
 CMakeFiles/TEP3.dir/CFileThrowEx.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TEP3.dir/CFileThrowEx.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/legusie/Documents/PWR/TEP/TEP3/CFileThrowEx.cpp > CMakeFiles/TEP3.dir/CFileThrowEx.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileThrowEx.cpp > CMakeFiles/TEP3.dir/CFileThrowEx.cpp.i
 
 CMakeFiles/TEP3.dir/CFileThrowEx.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TEP3.dir/CFileThrowEx.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/legusie/Documents/PWR/TEP/TEP3/CFileThrowEx.cpp -o CMakeFiles/TEP3.dir/CFileThrowEx.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileThrowEx.cpp -o CMakeFiles/TEP3.dir/CFileThrowEx.cpp.s
 
 CMakeFiles/TEP3.dir/CFileErrCode.cpp.o: CMakeFiles/TEP3.dir/flags.make
 CMakeFiles/TEP3.dir/CFileErrCode.cpp.o: ../CFileErrCode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TEP3.dir/CFileErrCode.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TEP3.dir/CFileErrCode.cpp.o -c /home/legusie/Documents/PWR/TEP/TEP3/CFileErrCode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TEP3.dir/CFileErrCode.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TEP3.dir/CFileErrCode.cpp.o -c /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileErrCode.cpp
 
 CMakeFiles/TEP3.dir/CFileErrCode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TEP3.dir/CFileErrCode.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/legusie/Documents/PWR/TEP/TEP3/CFileErrCode.cpp > CMakeFiles/TEP3.dir/CFileErrCode.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileErrCode.cpp > CMakeFiles/TEP3.dir/CFileErrCode.cpp.i
 
 CMakeFiles/TEP3.dir/CFileErrCode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TEP3.dir/CFileErrCode.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/legusie/Documents/PWR/TEP/TEP3/CFileErrCode.cpp -o CMakeFiles/TEP3.dir/CFileErrCode.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileErrCode.cpp -o CMakeFiles/TEP3.dir/CFileErrCode.cpp.s
 
 # Object files for target TEP3
 TEP3_OBJECTS = \
@@ -125,7 +125,7 @@ TEP3: CMakeFiles/TEP3.dir/CFileThrowEx.cpp.o
 TEP3: CMakeFiles/TEP3.dir/CFileErrCode.cpp.o
 TEP3: CMakeFiles/TEP3.dir/build.make
 TEP3: CMakeFiles/TEP3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable TEP3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable TEP3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TEP3.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -138,6 +138,6 @@ CMakeFiles/TEP3.dir/clean:
 .PHONY : CMakeFiles/TEP3.dir/clean
 
 CMakeFiles/TEP3.dir/depend:
-	cd /home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/legusie/Documents/PWR/TEP/TEP3 /home/legusie/Documents/PWR/TEP/TEP3 /home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug /home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug /home/legusie/Documents/PWR/TEP/TEP3/cmake-build-debug/CMakeFiles/TEP3.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/przydasie/Documents/GIT_REPOS/TEP/TEP3 /home/przydasie/Documents/GIT_REPOS/TEP/TEP3 /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug /home/przydasie/Documents/GIT_REPOS/TEP/TEP3/cmake-build-debug/CMakeFiles/TEP3.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/TEP3.dir/depend
 
