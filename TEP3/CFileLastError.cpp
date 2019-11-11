@@ -5,14 +5,18 @@
 #include <cstdio>
 #include "CFileLastError.h"
 
-CFileLastError::CFileLastError() {
-    b_last_error = false;
+bool CFileLastError::b_last_error = false;
+
+CFileLastError::CFileLastError() : pf_file(NULL), b_is_open(false) {
+
 }
 
-CFileLastError::CFileLastError(std::string sFileName) {
+CFileLastError::CFileLastError(std::string sFileName) : pf_file(NULL), b_is_open(false) {
     b_last_error = false;
-    pf_file = std::fopen(sFileName.c_str(), "w+");
-    if (pf_file == NULL) {
+    if (!b_is_open) {
+        pf_file = std::fopen(sFileName.c_str(), "w+");
+        b_is_open = true;
+    } else {
         b_last_error = true;
     }
 }
@@ -26,10 +30,13 @@ bool CFileLastError::bGetLastError() {
 }
 
 void CFileLastError::vOpenFile(std::string sFileName) {
-    pf_file = std::fopen(sFileName.c_str(), "w+");
-    if(pf_file == NULL){
-        b_last_error = true;
+    if(!b_is_open){
+        pf_file = std::fopen(sFileName.c_str(), "w+");
+        b_is_open = true;
+    }else{
+        b_last_error = false;
     }
+
 }
 
 void CFileLastError::vCloseFile() {
