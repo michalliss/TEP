@@ -12,7 +12,9 @@ CFileErrCode::CFileErrCode(std::string sFileName, bool &pbSucc) : pf_file(NULL) 
   pbSucc = bOpenFile(sFileName);
 }
 CFileErrCode::~CFileErrCode() {
-
+  if(pf_file != NULL){
+    bCloseFile();
+  }
 }
 bool CFileErrCode::bOpenFile(std::string sFileName) {
   if (pf_file!=NULL) return true;
@@ -21,7 +23,7 @@ bool CFileErrCode::bOpenFile(std::string sFileName) {
   if (pf_file==NULL) return true;
   else return false;
 }
-bool CFileErrCode::bCloseFile(std::string sFileName) {
+bool CFileErrCode::bCloseFile() {
   if (pf_file==NULL) return true;
 
   std::fclose(pf_file);

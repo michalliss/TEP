@@ -2,18 +2,17 @@
 // Created by legusie on 11/8/19.
 //
 
-
 #include <cstdio>
 #include "CFileThrowEx.h"
 
-CFileThrowEx::CFileThrowEx() : pf_file(NULL) {
-
-}
+CFileThrowEx::CFileThrowEx() : pf_file(NULL) {}
 CFileThrowEx::CFileThrowEx(std::string sFileName) : pf_file(NULL) {
   vOpenFile(sFileName);
 }
 CFileThrowEx::~CFileThrowEx() {
-  vCloseFile();
+  if(pf_file != NULL){
+    vCloseFile();
+  }
 }
 void CFileThrowEx::vOpenFile(std::string sFileName) {
   if (pf_file==NULL) {

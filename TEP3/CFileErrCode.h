@@ -13,7 +13,7 @@ class CFileErrCode {
   CFileErrCode(std::string sFileName, bool &pbSucc);
   ~CFileErrCode();
   bool bOpenFile(std::string sFileName);
-  bool bCloseFile(std::string sFileName);
+  bool bCloseFile();
   bool bPrintLine(std::string sText);
   bool bPrintManyLines(std::vector<std::string> sText);
  private:

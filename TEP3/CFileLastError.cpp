@@ -17,7 +17,9 @@ CFileLastError::CFileLastError(std::string sFileName) : pf_file(NULL) {
 }
 
 CFileLastError::~CFileLastError() {
-  vCloseFile();
+  if(pf_file != NULL){
+    vCloseFile();
+  }
 }
 
 bool CFileLastError::bGetLastError() {
@@ -36,9 +38,9 @@ void CFileLastError::vOpenFile(std::string sFileName) {
 
 void CFileLastError::vCloseFile() {
   b_last_error = false;
-  if (pf_file==NULL) {
+  if (pf_file!=NULL) {
     std::fclose(pf_file);
-    pf_file==NULL;
+    pf_file=NULL;
   } else {
     b_last_error = true;
   }

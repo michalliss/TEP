@@ -8,7 +8,7 @@
 #include <bits/types/FILE.h>
 #include <string>
 
-class CFileThrowEx {
+class CFileThrowEx{
 
  public:
   CFileThrowEx();
