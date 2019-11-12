@@ -5,6 +5,7 @@
 #ifndef TEP3_CFILELASTERROR_H
 #define TEP3_CFILELASTERROR_H
 
+#define S_NEWLINE "\n"
 
 #include <string>
 #include <vector>

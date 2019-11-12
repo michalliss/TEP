@@ -2,36 +2,36 @@
 #include "CFileErrCode.h"
 #include "CFileLastError.h"
 #include "CFileThrowEx.h"
+#include "constants.h";
+
 void v_open_test() {
   CFileLastError c_file1;
   for (int i = 0; i < 10; i++) {
-    c_file1.vOpenFile("asdf1.txt");
-    c_file1.vPrintLine("asdf");
+    c_file1.vOpenFile(S_FILE_1);
+    c_file1.vPrintLine(S_TEXT);
   }
+  std::cout << c_file1.bGetLastError() << std::endl;
 
-  std::cout << c_file1.bGetLastError();
 
   CFileThrowEx c_file2;
   try {
     for (int i = 0; i < 10; i++) {
-     c_file2.vOpenFile("asdf2.txt");
-     c_file2.vPrintLine("asdf");
+     c_file2.vOpenFile(S_FILE_2);
+     c_file2.vPrintLine(S_TEXT);
      c_file2.vCloseFile();
     }
   } catch (int e) {
-    std::cout << "error";
+    std::cout << S_ERR_MESSAGE;
   }
+
 
   bool b_err;
-  CFileErrCode c_file3("asdf3.txt", b_err);
-
+  bool b_err_2;
+  CFileErrCode c_file3(S_FILE_3, b_err);
   for (int i = 0; i < 10; i++) {
-    c_file3.bPrintLine("33");
+    b_err_2 = c_file3.bPrintLine(S_TEXT);
   }
-
-  std::cout << b_err;
-
-
+  std::cout << b_err << " " << b_err_2;
 }
 
 int main() {

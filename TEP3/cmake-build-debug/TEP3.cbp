@@ -100,6 +100,9 @@
 		<Unit filename="/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/CFileThrowEx.h">
 			<Option target="TEP3"/>
 		</Unit>
+		<Unit filename="/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/constants.h">
+			<Option target="TEP3"/>
+		</Unit>
 		<Unit filename="/home/przydasie/Documents/GIT_REPOS/TEP/TEP3/main.cpp">
 			<Option target="TEP3"/>
 		</Unit>

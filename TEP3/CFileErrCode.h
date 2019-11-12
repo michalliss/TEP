@@ -4,8 +4,12 @@
 
 #ifndef TEP3_CFILEERRCODE_H
 #define TEP3_CFILEERRCODE_H
+
+#define S_NEWLINE "\n"
+
 #include <string>
 #include <vector>
+#include <cstdio>
 
 class CFileErrCode {
  public:

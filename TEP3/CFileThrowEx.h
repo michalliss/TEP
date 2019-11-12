@@ -4,6 +4,10 @@
 
 #ifndef TEP3_CFILETHROWEX_H
 #define TEP3_CFILETHROWEX_H
+
+#define S_NEWLINE "\n"
+#define EX_ERR_OPEN_FILE 1
+
 #include <vector>
 #include <bits/types/FILE.h>
 #include <string>

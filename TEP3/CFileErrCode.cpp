@@ -2,7 +2,7 @@
 // Created by legusie on 11/8/19.
 //
 
-#include <cstdio>
+
 #include "CFileErrCode.h"
 
 CFileErrCode::CFileErrCode() : pf_file(NULL) {
@@ -12,7 +12,7 @@ CFileErrCode::CFileErrCode(std::string sFileName, bool &pbSucc) : pf_file(NULL) 
   pbSucc = bOpenFile(sFileName);
 }
 CFileErrCode::~CFileErrCode() {
-  if(pf_file != NULL){
+  if (pf_file!=NULL) {
     bCloseFile();
   }
 }
@@ -33,15 +33,15 @@ bool CFileErrCode::bCloseFile() {
 bool CFileErrCode::bPrintLine(std::string sText) {
   if (pf_file==NULL) return true;
 
-  std::fprintf(pf_file, sText.c_str());
+  std::fprintf(pf_file, (sText + S_NEWLINE).c_str());
   return false;
 }
 bool CFileErrCode::bPrintManyLines(std::vector<std::string> sText) {
   if (pf_file==NULL) return true;
 
   bool b_err_flag = false;
-  for (int i = 0; i < sText.size(); i++) {
-    if (bPrintLine(sText[i])==true) b_err_flag = true;
+  for (int i = 0; i < sText.size() and !b_err_flag; i++) {
+    b_err_flag = bPrintLine(sText[i]);
   }
-  return false;
+  return b_err_flag;
 }

@@ -12,12 +12,11 @@ CFileLastError::CFileLastError() : pf_file(NULL) {
 }
 
 CFileLastError::CFileLastError(std::string sFileName) : pf_file(NULL) {
-  pf_file = std::fopen(sFileName.c_str(), "w+");
-  b_last_error = pf_file==NULL ? true : false;
+  vOpenFile(sFileName);
 }
 
 CFileLastError::~CFileLastError() {
-  if(pf_file != NULL){
+  if (pf_file!=NULL) {
     vCloseFile();
   }
 }
@@ -40,7 +39,7 @@ void CFileLastError::vCloseFile() {
   b_last_error = false;
   if (pf_file!=NULL) {
     std::fclose(pf_file);
-    pf_file=NULL;
+    pf_file = NULL;
   } else {
     b_last_error = true;
   }
@@ -49,25 +48,19 @@ void CFileLastError::vCloseFile() {
 void CFileLastError::vPrintLine(std::string sText) {
   b_last_error = false;
   if (pf_file!=NULL) {
-    std::fprintf(pf_file, sText.c_str());
+    std::fprintf(pf_file, (sText + S_NEWLINE).c_str());
   } else {
     b_last_error = true;
   }
 }
 void CFileLastError::vPrintManyLines(std::vector<std::string> sText) {
   b_last_error = false;
-  bool b_error_flag = false;
 
-  if (pf_file!=NULL) {
-    for (int i = 0; i < sText.size(); i++) {
-      vPrintLine(sText[i]);
-      if(b_last_error == true)  b_error_flag = true;
-    }
-    b_last_error = b_error_flag;
-  } else {
-    b_last_error = true;
+  for (int i = 0; i < sText.size() and !b_last_error; i++) {
+    vPrintLine(sText[i]);
   }
-
 }
+
+
 
 
