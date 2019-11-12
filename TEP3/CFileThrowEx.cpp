@@ -2,7 +2,7 @@
 // Created by legusie on 11/8/19.
 //
 
-#include <cstdio>
+
 #include "CFileThrowEx.h"
 
 CFileThrowEx::CFileThrowEx() : pf_file(NULL) {}

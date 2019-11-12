@@ -9,6 +9,7 @@
 
 #include <string>
 #include <vector>
+#include <cstdio>
 
 class CFileLastError {
 private:

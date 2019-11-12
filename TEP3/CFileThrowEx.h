@@ -11,6 +11,7 @@
 #include <vector>
 #include <bits/types/FILE.h>
 #include <string>
+#include <cstdio>
 
 class CFileThrowEx{
 
