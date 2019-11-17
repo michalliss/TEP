@@ -11,20 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb02f71b-c96c-4f0f-a527-5d96d2fadfda" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/constants.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFileErrCode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CFileErrCode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFileErrCode.h" beforeDir="false" afterPath="$PROJECT_DIR$/CFileErrCode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFileLastError.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CFileLastError.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFileLastError.h" beforeDir="false" afterPath="$PROJECT_DIR$/CFileLastError.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFileThrowEx.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CFileThrowEx.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFileThrowEx.h" beforeDir="false" afterPath="$PROJECT_DIR$/CFileThrowEx.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/TEP3.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/TEP3.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="bb02f71b-c96c-4f0f-a527-5d96d2fadfda" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +64,7 @@
       <workItem from="1573405037338" duration="1465000" />
       <workItem from="1573479728947" duration="11252000" />
       <workItem from="1573601125900" duration="2850000" />
+      <workItem from="1573916673527" duration="82000" />
     </task>
     <servers />
   </component>
