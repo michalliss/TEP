@@ -30,6 +30,7 @@ class CTreeDynamic {
     void vPrintAllBelow();
     void vPrintUp();
     void vPrintNice();
+    CNodeDynamic *pcGetRoot();
     CNodeDynamic *pcUnpin();
    private:
     void vPrintNice(CNodeDynamic &node, int depth);

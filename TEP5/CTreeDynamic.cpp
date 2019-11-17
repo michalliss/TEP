@@ -7,7 +7,6 @@
 
 CTreeDynamic::CNodeDynamic::CNodeDynamic(const CTreeDynamic::CNodeDynamic &cNode)
     : i_val(cNode.i_val), pc_parent_node(cNode.pc_parent_node), v_children(cNode.v_children) {
-
   std::cout << "k";
   for (int i = 0; i < cNode.v_children.size(); i++) {
     this->v_children[i]->pc_parent_node = this;
@@ -51,6 +50,7 @@ void CTreeDynamic::CNodeDynamic::vAddNewChild(CTreeDynamic::CNodeDynamic *c_new_
 }
 
 CTreeDynamic::CNodeDynamic *CTreeDynamic::CNodeDynamic::pcUnpin() {
+  if (this->pc_parent_node==NULL) return NULL;
   std::vector<CNodeDynamic *> &v_nodes = this->pc_parent_node->v_children;
   std::vector<CNodeDynamic *>::iterator it_pos;
   it_pos = std::find(v_nodes.begin(), v_nodes.end(), this);
@@ -58,8 +58,9 @@ CTreeDynamic::CNodeDynamic *CTreeDynamic::CNodeDynamic::pcUnpin() {
   return this;
 }
 
-void CTreeDynamic::CNodeDynamic::pcGetRoot() {
-
+CTreeDynamic::CNodeDynamic *CTreeDynamic::CNodeDynamic::pcGetRoot() {
+  if (pc_parent_node==NULL) return this;
+  else return pc_parent_node->pcGetRoot();
 }
 
 CTreeDynamic::CNodeDynamic *CTreeDynamic::CNodeDynamic::pcGetChild(int iChildOffset) {
@@ -93,6 +94,7 @@ void CTreeDynamic::CNodeDynamic::vPrintNice() {
 }
 
 bool CTreeDynamic::bMoveSubtree(CTreeDynamic::CNodeDynamic *pcParentNode, CTreeDynamic::CNodeDynamic *pcNewChildNode) {
+  if (pcParentNode->pcGetRoot()==pcNewChildNode->pcGetRoot()) return false;
   pcParentNode->vAddNewChild(pcNewChildNode->pcUnpin());
   return true;
 }

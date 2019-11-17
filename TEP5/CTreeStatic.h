@@ -30,6 +30,7 @@ class CTreeStatic {
     void vPrintAllBelow();
     void vPrintUp();
     void vPrintNice();
+    CNodeStatic *pcGetRoot();
     CNodeStatic cUnpin();
    private:
     std::vector<CNodeStatic> v_children;

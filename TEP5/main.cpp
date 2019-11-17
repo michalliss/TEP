@@ -104,7 +104,7 @@ void v_tree_test2() {
 }
 
 int main() {
-  v_tree_test();
+  //v_tree_test();
   std::cout << "-------------------" << std::endl;
   v_tree_test2();
 }
