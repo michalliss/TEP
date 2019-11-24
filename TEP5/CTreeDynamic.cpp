@@ -3,7 +3,7 @@
 //
 
 #include "CTreeDynamic.h"
-#include <algorithm>
+
 
 CTreeDynamic::CNodeDynamic::CNodeDynamic(const CTreeDynamic::CNodeDynamic &cNode)
     : i_val(cNode.i_val), pc_parent_node(cNode.pc_parent_node), v_children(cNode.v_children) {

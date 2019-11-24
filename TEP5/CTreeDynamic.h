@@ -7,8 +7,11 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 class CTreeDynamic {
+ public:
   class CNodeDynamic {
+    friend class CTreeDynamic;
    public:
     CNodeDynamic() {
       i_val = 0;
@@ -24,15 +27,16 @@ class CTreeDynamic {
     void vSetValue(int iNewVal) { i_val = iNewVal; };
     int iGetChildrenNumber() { return (v_children.size()); };
     void vAddNewChild();
-    void vAddNewChild(CNodeDynamic *c_new_child);
     CNodeDynamic *pcGetChild(int iChildOffset);
     void vPrint() { std::cout << " " << i_val << "(" << pc_parent_node << ")"; };
     void vPrintAllBelow();
     void vPrintUp();
     void vPrintNice();
     CNodeDynamic *pcGetRoot();
-    CNodeDynamic *pcUnpin();
+
    private:
+    void vAddNewChild(CNodeDynamic *c_new_child);
+    CNodeDynamic *pcUnpin();
     void vPrintNice(CNodeDynamic &node, int depth);
     std::vector<CNodeDynamic *> v_children;
     CNodeDynamic *pc_parent_node = NULL;
@@ -40,7 +44,6 @@ class CTreeDynamic {
 
   };
 
- public:
   CTreeDynamic();
   ~CTreeDynamic();
   CNodeDynamic *pcGetRoot() { return (pc_root); }

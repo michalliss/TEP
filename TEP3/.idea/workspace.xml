@@ -30,6 +30,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TEP5" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -65,6 +66,7 @@
       <workItem from="1573479728947" duration="11252000" />
       <workItem from="1573601125900" duration="2850000" />
       <workItem from="1573916673527" duration="82000" />
+      <workItem from="1574067913203" duration="22000" />
     </task>
     <servers />
   </component>

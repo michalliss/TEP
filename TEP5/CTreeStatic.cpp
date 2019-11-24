@@ -3,7 +3,7 @@
 //
 
 #include "CTreeStatic.h"
-#include <algorithm>
+
 
 CTreeStatic::CNodeStatic::CNodeStatic(const CTreeStatic::CNodeStatic &cNode)
     : i_val(cNode.i_val), pc_parent_node(cNode.pc_parent_node), v_children(cNode.v_children) {
@@ -91,8 +91,7 @@ CTreeStatic::CNodeStatic *CTreeStatic::CNodeStatic::pcGetRoot() {
   else return pc_parent_node->pcGetRoot();
 }
 
-CTreeStatic::CTreeStatic() {
-  c_root = CNodeStatic();
+CTreeStatic::CTreeStatic(){
 }
 CTreeStatic::~CTreeStatic() {
 
