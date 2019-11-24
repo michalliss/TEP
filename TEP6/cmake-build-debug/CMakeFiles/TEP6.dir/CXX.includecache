@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/CTreeDynamic.h
+iostream
+-
+vector
+-
+algorithm
+-
+CTreeDynamic.tpp
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/CTreeDynamic.tpp
+
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/CTreeDynamic.tpp
+CTreeDynamic.h
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/CTreeDynamic.h
+
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/main.cpp
+iostream
+-
+CTreeDynamic.h
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/CTreeDynamic.h
+

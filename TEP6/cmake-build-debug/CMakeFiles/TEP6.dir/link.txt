@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/TEP6.dir/main.cpp.o  -o TEP6 
