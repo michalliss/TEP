@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP7/CMySmartPointer.h
+CRefCounter.h
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP7/CRefCounter.h
+
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP7/CRefCounter.h
+
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP7/main.cpp
+iostream
+-
+CMySmartPointer.h
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP7/CMySmartPointer.h
+

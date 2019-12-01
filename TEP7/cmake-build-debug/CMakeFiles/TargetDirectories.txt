@@ -1,0 +1,3 @@
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP7/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP7/cmake-build-debug/CMakeFiles/TEP7.dir
+/home/przydasie/Documents/GIT_REPOS/TEP/TEP7/cmake-build-debug/CMakeFiles/edit_cache.dir
