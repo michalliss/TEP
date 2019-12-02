@@ -35,10 +35,11 @@ class CNodeDynamic {
   void vPrintUp();
   void vPrintNice();
   CNodeDynamic<T> *pcGetRoot();
+  int iLeafNumber();
 
  private:
   std::vector<CNodeDynamic<T> *> v_children;
-  CNodeDynamic<T> *pc_parent_node = NULL;
+  CNodeDynamic<T> *pc_parent_node;
   T t_val;
 
   void vAddNewChild(CNodeDynamic *c_new_child);

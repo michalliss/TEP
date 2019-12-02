@@ -35,14 +35,14 @@ CNodeDynamic<T> &CNodeDynamic<T>::operator=(const CNodeDynamic<T> &cNode) {
 
 template<typename T>
 bool CNodeDynamic<T>::operator==(const CNodeDynamic<T> &rhs) const {
-  return v_children==rhs.v_children &&
-      pc_parent_node==rhs.pc_parent_node &&
-      t_val==rhs.t_val;
+  return v_children == rhs.v_children &&
+      pc_parent_node == rhs.pc_parent_node &&
+      t_val == rhs.t_val;
 }
 
 template<typename T>
 bool CNodeDynamic<T>::operator!=(const CNodeDynamic<T> &rhs) const {
-  return !(rhs==*this);
+  return !(rhs == *this);
 }
 
 template<typename T>
@@ -60,7 +60,7 @@ void CNodeDynamic<T>::vAddNewChild(CNodeDynamic<T> *c_new_child) {
 
 template<typename T>
 CNodeDynamic<T> *CNodeDynamic<T>::pcUnpin() {
-  if (this->pc_parent_node==NULL) return NULL;
+  if (this->pc_parent_node == NULL) return this;
   std::vector<CNodeDynamic<T> *> &v_nodes = this->pc_parent_node->v_children;
   typename std::vector<CNodeDynamic<T> *>::iterator it_pos;
   it_pos = std::find(v_nodes.begin(), v_nodes.end(), this);
@@ -70,7 +70,7 @@ CNodeDynamic<T> *CNodeDynamic<T>::pcUnpin() {
 
 template<typename T>
 CNodeDynamic<T> *CNodeDynamic<T>::pcGetRoot() {
-  if (pc_parent_node==NULL) return this;
+  if (pc_parent_node == NULL) return this;
   else return pc_parent_node->pcGetRoot();
 }
 
@@ -92,7 +92,7 @@ void CNodeDynamic<T>::vPrintAllBelow() {
 template<typename T>
 void CNodeDynamic<T>::vPrintUp() {
   this->vPrint();
-  if (pc_parent_node!=NULL) {
+  if (pc_parent_node != NULL) {
     pc_parent_node->vPrintUp();
   }
 }
@@ -113,8 +113,18 @@ void CNodeDynamic<T>::vPrintNice() {
 }
 
 template<typename T>
+int CNodeDynamic<T>::iLeafNumber() {
+  if (v_children.empty()) return 1;
+  int i_sum = 0;
+  for (int i = 0; i < v_children.size(); i++) {
+    i_sum += v_children[i]->iLeafNumber();
+  }
+  return i_sum;
+}
+
+template<typename T>
 bool CTreeDynamic<T>::bMoveSubtree(CNodeDynamic<T> *pcParentNode, CNodeDynamic<T> *pcNewChildNode) {
-  if (pcParentNode->pcGetRoot()==pcNewChildNode->pcGetRoot()) return false;
+  if (pcParentNode->pcGetRoot() == pcNewChildNode->pcGetRoot()) return false;
   pcParentNode->vAddNewChild(pcNewChildNode->pcUnpin());
   return true;
 }

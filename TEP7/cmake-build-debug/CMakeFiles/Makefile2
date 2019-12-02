@@ -44,10 +44,10 @@ RM = /opt/clion/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/przydasie/Documents/GIT_REPOS/TEP/TEP7
+CMAKE_SOURCE_DIR = /home/legusie/Documents/PWR/TEP/TEP7
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/przydasie/Documents/GIT_REPOS/TEP/TEP7/cmake-build-debug
+CMAKE_BINARY_DIR = /home/legusie/Documents/PWR/TEP/TEP7/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ preinstall:
 CMakeFiles/TEP7.dir/all:
 	$(MAKE) -f CMakeFiles/TEP7.dir/build.make CMakeFiles/TEP7.dir/depend
 	$(MAKE) -f CMakeFiles/TEP7.dir/build.make CMakeFiles/TEP7.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/przydasie/Documents/GIT_REPOS/TEP/TEP7/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target TEP7"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/legusie/Documents/PWR/TEP/TEP7/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target TEP7"
 .PHONY : CMakeFiles/TEP7.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TEP7.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/przydasie/Documents/GIT_REPOS/TEP/TEP7/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/legusie/Documents/PWR/TEP/TEP7/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/TEP7.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/przydasie/Documents/GIT_REPOS/TEP/TEP7/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/legusie/Documents/PWR/TEP/TEP7/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/TEP7.dir/rule
 
 # Convenience name for target.

@@ -14,27 +14,33 @@ class CMySmartPointer {
     pc_counter->iAdd();
   }
   CMySmartPointer(const CMySmartPointer<T> &pcOther) {
+    vCopyPointer(pcOther);
+  }
+  ~CMySmartPointer() {
+    if (pc_counter->iDec() == 0) {
+      vDeletePointer();
+    }
+  }
+  void vCopyPointer(const CMySmartPointer &pcOther) {
     pc_pointer = pcOther.pc_pointer;
     pc_counter = pcOther.pc_counter;
     pc_counter->iAdd();
   }
-  ~CMySmartPointer() {
-    if (pc_counter->iDec()==0) {
-      delete pc_pointer;
-      delete pc_counter;
-    }//if (pc_counter->iDec())
+  void vDeletePointer() {
+    delete pc_pointer;
+    delete pc_counter;
   }
+
   T &operator*() { return (*pc_pointer); }
   T *operator->() { return (pc_pointer); }
   void operator=(const CMySmartPointer<T> &pcOther) {
-    if (pc_counter->iDec()==0) {
-      delete pc_pointer;
-      delete pc_counter;
+    if (this != &pcOther) {
+      if (pc_counter->iDec() == 0) {
+        vDeletePointer();
+      }
+      vCopyPointer(pcOther);
     }
 
-    pc_pointer = pcOther.pc_pointer;
-    pc_counter = pcOther.pc_counter;
-    pc_counter->iAdd();
   }
  private:
   CRefCounter *pc_counter;

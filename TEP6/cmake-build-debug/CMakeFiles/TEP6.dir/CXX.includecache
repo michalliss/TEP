@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/CTreeDynamic.h
+/home/legusie/Documents/PWR/TEP/TEP6/CTreeDynamic.h
 iostream
 -
 vector
@@ -14,15 +14,19 @@ vector
 algorithm
 -
 CTreeDynamic.tpp
-/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/CTreeDynamic.tpp
+/home/legusie/Documents/PWR/TEP/TEP6/CTreeDynamic.tpp
 
-/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/CTreeDynamic.tpp
+/home/legusie/Documents/PWR/TEP/TEP6/CTreeDynamic.tpp
 CTreeDynamic.h
-/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/CTreeDynamic.h
+/home/legusie/Documents/PWR/TEP/TEP6/CTreeDynamic.h
 
-/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/main.cpp
+/home/legusie/Documents/PWR/TEP/TEP6/constants.h
+
+/home/legusie/Documents/PWR/TEP/TEP6/main.cpp
 iostream
 -
+constants.h
+/home/legusie/Documents/PWR/TEP/TEP6/constants.h
 CTreeDynamic.h
-/home/przydasie/Documents/GIT_REPOS/TEP/TEP6/CTreeDynamic.h
+/home/legusie/Documents/PWR/TEP/TEP6/CTreeDynamic.h
 
