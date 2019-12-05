@@ -19,7 +19,9 @@ class CMySmartPointer {
   ~CMySmartPointer() {
     if (pc_counter->iDec() == 0) {
       vDeletePointer();
+      //std::cout << "usuwam: " << pc_pointer << std::endl;
     }
+
   }
   void vCopyPointer(const CMySmartPointer &pcOther) {
     pc_pointer = pcOther.pc_pointer;
@@ -33,14 +35,17 @@ class CMySmartPointer {
 
   T &operator*() { return (*pc_pointer); }
   T *operator->() { return (pc_pointer); }
-  void operator=(const CMySmartPointer<T> &pcOther) {
+  CMySmartPointer &operator=(const CMySmartPointer<T> &pcOther) {
     if (this != &pcOther) {
       if (pc_counter->iDec() == 0) {
         vDeletePointer();
       }
       vCopyPointer(pcOther);
-    }
-
+      return *this;
+    } else return *this;
+  }
+  CMySmartPointer cDuplicate(){
+    return CMySmartPointer(new T(*pc_pointer));
   }
  private:
   CRefCounter *pc_counter;

@@ -88,6 +88,9 @@
 		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP7/CRefCounter.h">
 			<Option target="TEP7"/>
 		</Unit>
+		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP7/constants.h">
+			<Option target="TEP7"/>
+		</Unit>
 		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP7/main.cpp">
 			<Option target="TEP7"/>
 		</Unit>

@@ -11,7 +11,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb02f71b-c96c-4f0f-a527-5d96d2fadfda" name="Default Changelist" comment="" />
+    <list default="true" id="bb02f71b-c96c-4f0f-a527-5d96d2fadfda" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../TEP7/constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP7/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP7/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/TEP7.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/TEP7.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/TEP7.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/TEP7.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/TEP7.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/TEP7.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/TEP7.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/TEP7.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP7/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP7/cmake-build-debug/TEP7" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP7/cmake-build-debug/TEP7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP7/cmake-build-debug/TEP7.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP7/cmake-build-debug/TEP7.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP7/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP7/main.cpp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +79,7 @@
       <workItem from="1573601125900" duration="2850000" />
       <workItem from="1573916673527" duration="82000" />
       <workItem from="1574067913203" duration="22000" />
+      <workItem from="1575282583875" duration="15000" />
     </task>
     <servers />
   </component>
