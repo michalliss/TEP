@@ -67,8 +67,10 @@ void v_lista_2_test_run() {
 void test_move(){
   CTable c_tab3("tab3", 4);
   CTable c_tab4("tab4", 4);
+  c_tab3 = c_tab4/=3;
   c_tab3 = c_tab3 + c_tab4;
   c_tab3.vShow();
+
 }
 
 

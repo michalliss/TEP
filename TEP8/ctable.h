@@ -33,7 +33,7 @@ class CTable {
   std::string sGetName();
 
   CTable operator+(CTable const &pcNewTab);
-  CTable operator/=(int iVal);
+  CTable& operator/=(int iVal);
   CTable& operator=(CTable const &pcNewTab);
   CTable& operator=(CTable &&pcNewTab);
 };
