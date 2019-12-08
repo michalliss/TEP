@@ -13,27 +13,26 @@ CTable::CTable(std::string sName, int iTableLen) : s_name(sName) {
         this->pi_tab = new int[DEFAULT_CTABLE_SIZE];
     }
     std::cout << MSG_PARAMETER << this->s_name << std::endl;
-
 }
 
 CTable::CTable(const CTable &pcOther) : s_name(pcOther.s_name + NAME_COPY),
                                         pi_tab(new int[pcOther.i_size]),
                                         i_size(pcOther.i_size) {
 
-    /*
-    for (int ii = 0; ii < i_size; ii++) {
-      this->pi_tab[ii] = pcOther.pi_tab[ii];
-    }
-    */
-
     std::copy(pcOther.pi_tab, pcOther.pi_tab + i_size, this->pi_tab);
-
     std::cout << this->s_name << std::endl;
 }
 
+CTable::CTable(CTable &&pcOther) :s_name(pcOther.s_name), pi_tab(pcOther.pi_tab), i_size(pcOther.i_size){
+  pcOther.pi_tab = NULL;
+  std::cout << "MOVE " << this->s_name << std::endl;
+}
+
 CTable::~CTable() {
+  if(pi_tab != NULL){
     delete[] this->pi_tab;
-    std::cout << MSG_DELETE << this->s_name << std::endl;
+  }
+  std::cout << MSG_DELETE << this->s_name << std::endl;
 }
 
 CTable *CTable::pcClone() {
@@ -42,25 +41,25 @@ CTable *CTable::pcClone() {
     return c_cloned_table;
 }
 
-CTable CTable::operator+(CTable const &pcNewTab) {
+/*CTable CTable::operator+(CTable const &pcNewTab) {
     CTable c_result_table(this->s_name + "_concat_" + pcNewTab.s_name, this->i_size + pcNewTab.i_size);
 
     std::copy(this->pi_tab, this->pi_tab + this->i_size, c_result_table.pi_tab);
     std::copy(pcNewTab.pi_tab, pcNewTab.pi_tab + pcNewTab.i_size, c_result_table.pi_tab + this->i_size);
 
     return c_result_table;
-}
+}*/
 
-CTable& CTable::operator/=(int iVal) {
+CTable CTable::operator/=(int iVal) {
     if (iVal <= 1) {
-        return *this;
+        return std::move(*this);
     } else {
         int ii = 0;
         for(ii; ii*iVal < this->i_size; ii++){
             this->pi_tab[ii] = this->pi_tab[ii*iVal];
         }
         this->bSetNewSize(ii);
-        return *this;
+        return std::move(*this);
     }
 }
 
@@ -75,6 +74,28 @@ CTable& CTable::operator=(CTable const &pcNewTab) {
         return *this;
     } else return *this;
 }
+
+CTable& CTable::operator=(CTable &&pcNewTab) {
+  if(&pcNewTab != this){
+    delete[] this->pi_tab;
+    this->pi_tab = pcNewTab.pi_tab;
+    this->i_size = pcNewTab.i_size;
+    this->s_name = pcNewTab.s_name;
+
+    pcNewTab.pi_tab = NULL;
+    return *this;
+  } else return *this;
+}
+
+CTable CTable::operator+(CTable const &pcNewTab) {
+  CTable c_result_table(this->s_name + "_concat_" + pcNewTab.s_name, this->i_size + pcNewTab.i_size);
+  std::copy(this->pi_tab, this->pi_tab + this->i_size, c_result_table.pi_tab);
+  std::copy(pcNewTab.pi_tab, pcNewTab.pi_tab + pcNewTab.i_size, c_result_table.pi_tab + this->i_size);
+
+  return(std::move(c_result_table));
+}
+
+
 
 void CTable::vShow() {
     std::cout << s_name << ": ";
@@ -102,11 +123,6 @@ bool CTable::bSetNewSize(int iTableLen) {
     if (iTableLen > 0) {
         int *pi_new_tab = new int[iTableLen];
         int i_max_copy_size = (iTableLen > this->i_size) ? this->i_size : iTableLen;
-        /*
-        for (int ii = 0; ii < i_max_copy_size; ii++) {
-          pi_new_tab[ii] = pi_tab[ii];
-        }
-        */
         std::copy(this->pi_tab, this->pi_tab + i_max_copy_size, pi_new_tab);
         delete[] pi_tab;
         this->pi_tab = pi_new_tab;

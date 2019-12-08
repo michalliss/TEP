@@ -64,39 +64,15 @@ void v_lista_2_test_run() {
 }
 
 
+void test_move(){
+  CTable c_tab3("tab3", 4);
+  CTable c_tab4("tab4", 4);
+  c_tab3 = c_tab3 + c_tab4;
+  c_tab3.vShow();
+}
+
+
 int main() {
-
-    CTable c_tab_0, c_tab_1, c_tab_3, c_tab_4;
-    c_tab_0.bSetNewSize(I_TEST_SIZE_4);
-    c_tab_1.bSetNewSize(I_TEST_SIZE_5);
-    for (int ii = 0; ii < c_tab_0.iGetSize(); ii++) {
-        c_tab_0.bSetVal(ii, ii + I_TEST_OFFSET);
-    }
-
-
-    for (int ii = 0; ii < c_tab_1.iGetSize(); ii++) {
-        c_tab_1.bSetVal(ii, ii + I_TEST_OFFSET_1);
-    }
-
-    c_tab_0.vShow();
-    c_tab_1.vShow();
-
-    c_tab_3 = c_tab_0 + c_tab_1;
-    c_tab_3.vShow();
-
-    c_tab_0 = c_tab_1;
-
-    c_tab_1.bSetVal(I_TEST_OFFSET_2, I_TEST_VALUE_3);
-    
-    c_tab_0.vShow();
-    c_tab_1.vShow();
-
-    std::cout << "LIVE--------------------------------------------------------------" << std::endl;
-    c_tab_0.vShow();
-    c_tab_0/=I_TEST_DIVIDE_VAL;
-    c_tab_0.vShow();
-
-    c_tab_3.vShow();
-    c_tab_4 = c_tab_3/=I_TEST_DIVIDE_VAL;
-    c_tab_4.vShow();
+  test_move();
+  //test_move();
 }
