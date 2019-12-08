@@ -1,0 +1,15 @@
+#define I_TEST_VALUE 9
+#define I_TEST_VALUE_2 8
+#define S_TEST_NAME "tabela"
+#define I_TEST_SIZE 4
+#define I_TEST_SIZE_2 10
+#define I_TEST_SIZE_3 1
+#define I_TEST_POS 0
+#define I_TEST_POS_1 1
+#define I_TEST_SIZE_4 3
+#define I_TEST_SIZE_5 10
+#define I_TEST_OFFSET 1
+#define I_TEST_OFFSET_1 51
+#define I_TEST_OFFSET_2 2
+#define I_TEST_VALUE_3 123
+#define I_TEST_DIVIDE_VAL 3
