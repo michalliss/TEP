@@ -9,7 +9,6 @@
 #include "CSolution.h"
 #define I_DEFAULT_SIZE 2
 class CMscnProblem {
-  friend int main();
  private:
   int i_d;
   int i_f;

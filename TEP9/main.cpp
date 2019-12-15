@@ -1,6 +1,5 @@
 #include <iostream>
 #include "CMscnProblem.h"
-#include "CSolution.h"
 #include "Utils.h"
 
 int main() {
@@ -18,7 +17,7 @@ int main() {
 
   std::cout << "Organiczenia: " << std::endl;
   for (int i = 0; i < i_len; i++) {
-    std::cout << problem.getMin(sol, i) << " <-> " << problem.getMax(sol, i) << std::endl;
+    std::cout << problem.getMin(sol, i) << " < " <<  sol[i] << " > " << problem.getMax(sol, i) << std::endl;
   }
   std::cout << std::endl;
   std::cout << "Quality: " << problem.dGetQuality(sol, i_len, b_succ) << ", Success: " << b_succ << std::endl;

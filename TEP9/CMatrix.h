@@ -4,9 +4,11 @@
 
 #ifndef TEP9__CMATRIX_H_
 #define TEP9__CMATRIX_H_
-#define I_DEFAULT_SIZE 1
+#define I_DEFAULT_MATRIX_SIZE 1
 #include <fstream>
 #include <string>
+#include <string>
+#include <sstream>
 class CMatrix {
  private:
   double **pd_tab;

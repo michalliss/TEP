@@ -7,12 +7,10 @@
 #include "CMscnProblem.h"
 
 CMscnProblem::CMscnProblem() {
-  i_d = I_DEFAULT_SIZE;
-  i_f = I_DEFAULT_SIZE;
-  i_d = I_DEFAULT_SIZE;
-  i_s = I_DEFAULT_SIZE;
-
-
+  bSetD(I_DEFAULT_SIZE);
+  bSetF(I_DEFAULT_SIZE);
+  bSetM(I_DEFAULT_SIZE);
+  bSetS(I_DEFAULT_SIZE);
 }
 
 bool CMscnProblem::bSetD(int iD) {
@@ -117,6 +115,7 @@ double CMscnProblem::d_calc_P(CMatrix &xm) {
       d_res += c_p(s)*xm(m, s);
     }
   }
+  return d_res;
 }
 double CMscnProblem::d_calc_Kt(CMatrix &xd, CMatrix &xf, CMatrix &xm) {
   double d_res = 0;
