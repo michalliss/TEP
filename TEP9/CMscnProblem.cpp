@@ -9,10 +9,13 @@
 CMscnProblem::CMscnProblem() {
   i_d = I_DEFAULT_SIZE;
   i_f = I_DEFAULT_SIZE;
-  i_d = I_DEFAULT_SIZE;
+  i_m = I_DEFAULT_SIZE;
   i_s = I_DEFAULT_SIZE;
 
-
+  bSetD(I_DEFAULT_SIZE);
+  bSetF(I_DEFAULT_SIZE);
+  bSetM(I_DEFAULT_SIZE);
+  bSetS(I_DEFAULT_SIZE);
 }
 
 bool CMscnProblem::bSetD(int iD) {
@@ -117,6 +120,7 @@ double CMscnProblem::d_calc_P(CMatrix &xm) {
       d_res += c_p(s)*xm(m, s);
     }
   }
+  return d_res;
 }
 double CMscnProblem::d_calc_Kt(CMatrix &xd, CMatrix &xf, CMatrix &xm) {
   double d_res = 0;
@@ -189,6 +193,7 @@ bool CMscnProblem::bTechCheck(double *pdSolution, int i_length){
   for(int i = 0; i < i_length; i++){
     if(pdSolution[i] < 0) return false;
   }
+
   return true;
 }
 
@@ -278,6 +283,7 @@ bool CMscnProblem::bLoad(std::string sFilename) {
   c_xfminmax.bLoadFromStream(f_file, i_f, 2*i_m);
   f_file >> s_ignore;
   c_xmminmax.bLoadFromStream(f_file, i_m, 2*i_s);
+
 
   if (!f_file.good()) return false;
   return true;

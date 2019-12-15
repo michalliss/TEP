@@ -3,12 +3,11 @@
 //
 
 #include "CMatrix.h"
-#include <string>
-#include <sstream>
+
 
 CMatrix::CMatrix() {
-  i_row = I_DEFAULT_SIZE;
-  i_col = I_DEFAULT_SIZE;
+  i_row = I_DEFAULT_MATRIX_SIZE;
+  i_col = I_DEFAULT_MATRIX_SIZE;
   pd_tab = pd_alloc_tab(i_row, i_col);
 }
 
@@ -73,10 +72,11 @@ bool CMatrix::bLoadFromStream(std::ifstream &sStream, int iRow, int iCol) {
       sStream >> pd_tab[i][j];
     }
   }
+  return true;
 }
 
 bool CMatrix::bLoadFromStream(std::ifstream &sStream, int iCol) {
-  bLoadFromStream(sStream, 1, iCol);
+  return bLoadFromStream(sStream, 1, iCol);
 }
 
 bool CMatrix::bLoadFromArray(double *pdArray, int iRow, int iCol, int iIndex) {

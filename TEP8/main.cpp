@@ -65,14 +65,18 @@ void v_lista_2_test_run() {
 
 
 void test_move(){
+  CTable c_tab1("tab1", 4);
+  CTable c_tab2("tab2", 4);
   CTable c_tab3("tab3", 4);
-  CTable c_tab4("tab4", 4);
-  c_tab3 = c_tab3 + c_tab4;
-  c_tab3.vShow();
+
+  c_tab3 = c_tab1 + c_tab2;
+  c_tab3 = c_tab3 + c_tab3;
+  c_tab3 = c_tab3 + c_tab3;
+
+  std::cout << "copy: " << CTable::i_copy_counter << std::endl << "move: " << CTable::i_move_counter << std::endl;
 }
 
 
 int main() {
   test_move();
-  //test_move();
 }
