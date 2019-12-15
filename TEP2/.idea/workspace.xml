@@ -11,7 +11,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0ce9d4e-0c5b-4076-89ef-76cd8fa783d6" name="Default Changelist" comment="" />
+    <list default="true" id="e0ce9d4e-0c5b-4076-89ef-76cd8fa783d6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../TEP9/CMatrix.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TEP9/CMatrix.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TEP9/CMscnProblem.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TEP9/CMscnProblem.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEP8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TEP8/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +30,9 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1S1t0lseith630qIS7GLqTNRKDv" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -57,10 +68,28 @@
       <option name="presentableId" value="Default" />
       <updated>1570742708422</updated>
       <workItem from="1570742709651" duration="5048000" />
+      <workItem from="1576360136867" duration="101000" />
+      <workItem from="1576360546540" duration="5000" />
+      <workItem from="1576361127871" duration="27000" />
+      <workItem from="1576361160788" duration="10000" />
+      <workItem from="1576361197795" duration="13000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
