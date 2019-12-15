@@ -1,5 +1,6 @@
 #include "ctable.h"
-
+int CTable::i_copy_counter = 0;
+int CTable::i_move_counter = 0;
 CTable::CTable() : s_name(DEFAULT_CTABLE_NAME), pi_tab(new int[DEFAULT_CTABLE_SIZE]), i_size(DEFAULT_CTABLE_SIZE) {
     std::cout << this->s_name << std::endl;
 }
@@ -21,11 +22,13 @@ CTable::CTable(const CTable &pcOther) : s_name(pcOther.s_name + NAME_COPY),
 
     std::copy(pcOther.pi_tab, pcOther.pi_tab + i_size, this->pi_tab);
     std::cout << this->s_name << std::endl;
+    i_copy_counter++;
 }
 
 CTable::CTable(CTable &&pcOther) :s_name(pcOther.s_name), pi_tab(pcOther.pi_tab), i_size(pcOther.i_size){
   pcOther.pi_tab = NULL;
   std::cout << "MOVE " << this->s_name << std::endl;
+  i_move_counter++;
 }
 
 CTable::~CTable() {
@@ -41,14 +44,6 @@ CTable *CTable::pcClone() {
     return c_cloned_table;
 }
 
-/*CTable CTable::operator+(CTable const &pcNewTab) {
-    CTable c_result_table(this->s_name + "_concat_" + pcNewTab.s_name, this->i_size + pcNewTab.i_size);
-
-    std::copy(this->pi_tab, this->pi_tab + this->i_size, c_result_table.pi_tab);
-    std::copy(pcNewTab.pi_tab, pcNewTab.pi_tab + pcNewTab.i_size, c_result_table.pi_tab + this->i_size);
-
-    return c_result_table;
-}*/
 
 CTable& CTable::operator/=(int iVal) {
     if (iVal <= 1) {
@@ -70,27 +65,29 @@ CTable& CTable::operator=(CTable const &pcNewTab) {
         this->vSetName(pcNewTab.s_name);
         this->pi_tab = new int[i_size];
         std::copy(pcNewTab.pi_tab, pcNewTab.pi_tab + i_size, this->pi_tab);
+        i_copy_counter++;
         return *this;
     } else return *this;
 }
-
-CTable& CTable::operator=(CTable &&pcNewTab) {
+/*CTable& CTable::operator=(CTable &&pcNewTab) {
   if(&pcNewTab != this){
     if(pi_tab != NULL) delete[] this->pi_tab;
     this->pi_tab = pcNewTab.pi_tab;
     this->i_size = pcNewTab.i_size;
     this->s_name = pcNewTab.s_name;
     pcNewTab.pi_tab = NULL;
+    i_move_counter++;
     return *this;
   } else return *this;
-}
+}*/
+
 
 CTable CTable::operator+(CTable const &pcNewTab) {
   CTable c_result_table(this->s_name + "_concat_" + pcNewTab.s_name, this->i_size + pcNewTab.i_size);
   std::copy(this->pi_tab, this->pi_tab + this->i_size, c_result_table.pi_tab);
   std::copy(pcNewTab.pi_tab, pcNewTab.pi_tab + pcNewTab.i_size, c_result_table.pi_tab + this->i_size);
-
-  return(std::move(c_result_table));
+  //return (std::move(c_result_table));
+  return c_result_table;
 }
 
 

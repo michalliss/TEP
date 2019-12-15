@@ -13,8 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0ce9d4e-0c5b-4076-89ef-76cd8fa783d6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctab.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ctab.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ctab.h" beforeDir="false" afterPath="$PROJECT_DIR$/ctab.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ctable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ctable.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ctable.h" beforeDir="false" afterPath="$PROJECT_DIR$/ctable.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
@@ -86,6 +84,9 @@
       <workItem from="1575282599893" duration="44000" />
       <workItem from="1575822535667" duration="3787000" />
       <workItem from="1575826518877" duration="4303000" />
+      <workItem from="1575885073578" duration="1437000" />
+      <workItem from="1575890323273" duration="2856000" />
+      <workItem from="1576177308817" duration="9000" />
     </task>
     <servers />
   </component>
