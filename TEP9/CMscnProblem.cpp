@@ -193,7 +193,6 @@ bool CMscnProblem::bTechCheck(double *pdSolution, int i_length){
   for(int i = 0; i < i_length; i++){
     if(pdSolution[i] < 0) return false;
   }
-
   return true;
 }
 
@@ -288,7 +287,7 @@ bool CMscnProblem::bLoad(std::string sFilename) {
   if (!f_file.good()) return false;
   return true;
 }
-bool CMscnProblem::bSave(std::string sFilename) {
+bool CMscnProblem::bSave(const std::string& sFilename) {
   if (sFilename=="") return false;
   std::ofstream f_file(sFilename);
   if (!f_file.good()) return false;
@@ -317,11 +316,11 @@ bool CMscnProblem::bSave(std::string sFilename) {
   f_file << "xfminmax " << std::endl << c_xfminmax.sToString();
   f_file << "xmminmax " << std::endl << c_xmminmax.sToString();
 
-  if (!f_file.good()) return false;
+  if (f_file.fail()) return false;
   return true;
 }
 
-double CMscnProblem::getMin(double *pdSolution, int iIndex) {
+double CMscnProblem::getMin(int iIndex) {
   if (iIndex < i_d*i_f) {
     return c_xdminmax(iIndex%i_d, 2*(iIndex/i_d));
   } else if (iIndex < i_d*i_f + i_f*i_m) {
@@ -331,8 +330,10 @@ double CMscnProblem::getMin(double *pdSolution, int iIndex) {
     int i_local_index = iIndex - i_d*i_f - i_f*i_m;
     return c_xmminmax(i_local_index%i_m, 2*(i_local_index/i_m));
   }
+  return 0;
 }
-double CMscnProblem::getMax(double *pdSolution, int iIndex) {
+
+double CMscnProblem::getMax(int iIndex) {
   if (iIndex < i_d*i_f) {
     return c_xdminmax(iIndex%i_d, 2*(iIndex/i_d) + 1);
   } else if (iIndex < i_d*i_f + i_f*i_m) {
@@ -342,6 +343,7 @@ double CMscnProblem::getMax(double *pdSolution, int iIndex) {
     int i_local_index = iIndex - i_d*i_f - i_f*i_m;
     return c_xmminmax(i_local_index%i_m, 2*(i_local_index/i_m) + 1);
   }
+  return 0;
 }
 
 

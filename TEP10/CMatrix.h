@@ -19,6 +19,7 @@ class CMatrix {
   int i_col;
   double **pd_alloc_tab(int i_row, int i_col);
   void removeTab();
+
  public:
   CMatrix();
   CMatrix(const CMatrix &pcOther);
@@ -33,6 +34,7 @@ class CMatrix {
   bool bCheckBounds(int iRow, int iCol);
   bool bCheckBounds(int iCol);
   bool bAllPositive();
+  void vFillRandom(CRandom &cRandom, int iFrom, int iTo);
 
   int iGetRows() const;
   int iGetCols() const;
@@ -43,8 +45,9 @@ class CMatrix {
   bool bLoadFromStream(std::ifstream &sStream, int iCol);
   bool bLoadFromArray(double *pdArray, int iRow, int iCol, int iIndex);
   void vPushToVector(std::vector<double> &cVector);
+
   std::string sToString();
-    void vFillRandom(CRandom &cRandom, int iFrom, int iTo);
+
 };
 
 #endif //TEP9__CMATRIX_H_

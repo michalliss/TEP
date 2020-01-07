@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/legusie/GIT/TEP/TEP10/CMatrix.h
+/home/legusie/Documents/PWR/TEP/TEP10/CMatrix.h
 fstream
 -
 string
@@ -18,15 +18,23 @@ sstream
 vector
 -
 CRandom.h
-/home/legusie/GIT/TEP/TEP10/CRandom.h
+/home/legusie/Documents/PWR/TEP/TEP10/CRandom.h
 
-/home/legusie/GIT/TEP/TEP10/CMscnProblem.h
+/home/legusie/Documents/PWR/TEP/TEP10/CMscnProblem.cpp
+fstream
+-
+iostream
+-
+CMscnProblem.h
+/home/legusie/Documents/PWR/TEP/TEP10/CMscnProblem.h
+
+/home/legusie/Documents/PWR/TEP/TEP10/CMscnProblem.h
 CMatrix.h
-/home/legusie/GIT/TEP/TEP10/CMatrix.h
+/home/legusie/Documents/PWR/TEP/TEP10/CMatrix.h
 CSolution.h
-/home/legusie/GIT/TEP/TEP10/CSolution.h
+/home/legusie/Documents/PWR/TEP/TEP10/CSolution.h
 
-/home/legusie/GIT/TEP/TEP10/CRandom.h
+/home/legusie/Documents/PWR/TEP/TEP10/CRandom.h
 time.h
 -
 stdio.h
@@ -36,31 +44,9 @@ stdlib.h
 random
 -
 
-/home/legusie/GIT/TEP/TEP10/CRandomSearch.cpp
-iostream
--
-CRandomSearch.h
-/home/legusie/GIT/TEP/TEP10/CRandomSearch.h
-
-/home/legusie/GIT/TEP/TEP10/CRandomSearch.h
-CMscnProblem.h
-/home/legusie/GIT/TEP/TEP10/CMscnProblem.h
-
-/home/legusie/GIT/TEP/TEP10/CSolution.h
+/home/legusie/Documents/PWR/TEP/TEP10/CSolution.h
 vector
 -
 CMatrix.h
-/home/legusie/GIT/TEP/TEP10/CMatrix.h
-
-/home/legusie/GIT/TEP/TEP10/Utils.h
-
-/home/legusie/GIT/TEP/TEP10/main.cpp
-iostream
--
-CMscnProblem.h
-/home/legusie/GIT/TEP/TEP10/CMscnProblem.h
-Utils.h
-/home/legusie/GIT/TEP/TEP10/Utils.h
-CRandomSearch.h
-/home/legusie/GIT/TEP/TEP10/CRandomSearch.h
+/home/legusie/Documents/PWR/TEP/TEP10/CMatrix.h
 

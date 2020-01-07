@@ -18,6 +18,7 @@ struct CSolution {
     CMatrix c_xm;
     std::vector<double> c_vector;
     bool bLoad(std::string sFilename);
+    bool bSave(std::string sFilename);
     int iLenght();
     void vCalcVector();
 

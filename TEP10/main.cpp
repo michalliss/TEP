@@ -5,7 +5,8 @@
 
 void runFile(std::string s_problem_file, std::string s_solution_file){
   CMscnProblem problem;
-  problem.vGenerateInstance(123, 3, 1, 4, 1);
+  problem.vGenerateInstance(123, 3, 3, 3, 3);
+  problem.bSave("savetest.txt");
 
 
   bool b_succ;

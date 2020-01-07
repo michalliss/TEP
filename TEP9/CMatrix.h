@@ -16,6 +16,7 @@ class CMatrix {
   int i_col;
   double **pd_alloc_tab(int i_row, int i_col);
   void removeTab();
+
  public:
   CMatrix();
   CMatrix(const CMatrix &pcOther);

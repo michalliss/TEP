@@ -4,7 +4,6 @@
 
 #include "CMatrix.h"
 
-
 CMatrix::CMatrix() {
   i_row = I_DEFAULT_MATRIX_SIZE;
   i_col = I_DEFAULT_MATRIX_SIZE;
@@ -17,12 +16,12 @@ CMatrix::CMatrix(int iRow, int iCol) : i_row(iRow), i_col(iCol) {
 
 CMatrix::CMatrix(const CMatrix &pcOther) : i_row(pcOther.i_row), i_col(pcOther.i_col) {
   pd_tab = pd_alloc_tab(i_row, i_col);
-  for(int i = 0; i < i_row ; i++){
+  for (int i = 0; i < i_row; i++) {
     std::copy(pcOther.pd_tab[i], pcOther.pd_tab[i] + i_col, pd_tab[i]);
   }
 }
 CMatrix::~CMatrix() {
-  if(pd_tab !=NULL) removeTab();
+  if (pd_tab != NULL) removeTab();
 }
 
 double &CMatrix::operator()(int iRow, int iCol) {
@@ -34,7 +33,7 @@ double &CMatrix::operator()(int iIndex) {
 }
 
 void CMatrix::removeTab() {
-  for(int i = 0; i < i_row; i++){
+  for (int i = 0; i < i_row; i++) {
     delete[] pd_tab[i];
   }
   delete[] pd_tab;
@@ -45,7 +44,7 @@ bool CMatrix::bResize(int iNewRow, int iNewCol) {
   int i_min_row = i_row < iNewRow ? i_row : iNewRow;
   int i_min_col = i_col < iNewCol ? i_col : iNewCol;
 
-  for(int i = 0; i < i_min_row; i++){
+  for (int i = 0; i < i_min_row; i++) {
     std::copy(pd_tab[i], pd_tab[i] + i_min_col, pd_new_tab[i]);
   }
 
@@ -57,7 +56,7 @@ bool CMatrix::bResize(int iNewRow, int iNewCol) {
 }
 
 double **CMatrix::pd_alloc_tab(int i_row, int i_col) {
-  double **pd_tab = new double*[i_row];
+  double **pd_tab = new double *[i_row];
   for (int i = 0; i < i_row; i++) {
     pd_tab[i] = new double[i_col];
   }
@@ -65,7 +64,7 @@ double **CMatrix::pd_alloc_tab(int i_row, int i_col) {
 }
 
 bool CMatrix::bLoadFromStream(std::ifstream &sStream, int iRow, int iCol) {
-  if(iRow < 0 || iCol < 0 || !sStream.good()) return 0;
+  if (iRow < 0 || iCol < 0 || !sStream.good()) return 0;
   bResize(iRow, iCol);
   for (int i = 0; i < iRow; i++) {
     for (int j = 0; j < iCol; j++) {
@@ -80,7 +79,7 @@ bool CMatrix::bLoadFromStream(std::ifstream &sStream, int iCol) {
 }
 
 bool CMatrix::bLoadFromArray(double *pdArray, int iRow, int iCol, int iIndex) {
-  if(iRow < 0 || iCol < 0) return false;
+  if (iRow < 0 || iCol < 0) return false;
 
   bResize(iRow, iCol);
   for (int i = 0; i < i_row; i++) {
@@ -92,20 +91,9 @@ bool CMatrix::bLoadFromArray(double *pdArray, int iRow, int iCol, int iIndex) {
   return true;
 }
 
-std::string CMatrix::sToString() {
-  std::stringstream s_output;
-  for (int i = 0; i < i_row; i++) {
-    for (int j = 0; j < i_col; j++) {
-      s_output  << pd_tab[i][j] << " ";
-    }
-    s_output << std::endl;
-  }
-  return s_output.str();
-}
-
 bool CMatrix::bCheckBounds(int iRow, int iCol) {
-  if(iRow < 0 || iRow >= i_row) return false;
-  if(iCol < 0 || iCol >= i_col) return false;
+  if (iRow < 0 || iRow >= i_row) return false;
+  if (iCol < 0 || iCol >= i_col) return false;
   return true;
 }
 
@@ -115,14 +103,14 @@ bool CMatrix::bCheckBounds(int iCol) {
 
 double CMatrix::dRowSum(int iRow) {
   double d_res = 0;
-  for(int i = 0; i < i_col; i++){
+  for (int i = 0; i < i_col; i++) {
     d_res += pd_tab[iRow][i];
   }
   return d_res;
 }
 double CMatrix::dColSum(int iCol) {
   double d_res = 0;
-  for(int i = 0; i < i_row; i++){
+  for (int i = 0; i < i_row; i++) {
     d_res += pd_tab[i][iCol];
   }
   return d_res;
@@ -135,5 +123,13 @@ int CMatrix::iGetCols() const {
   return i_col;
 }
 
-
-
+std::string CMatrix::sToString() {
+  std::stringstream s_output;
+  for (int i = 0; i < i_row; i++) {
+    for (int j = 0; j < i_col; j++) {
+      s_output << pd_tab[i][j] << " ";
+    }
+    s_output << std::endl;
+  }
+  return s_output.str();
+}
