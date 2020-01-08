@@ -3,7 +3,7 @@
 //
 
 #include <fstream>
-#include <iostream>
+
 #include "CMscnProblem.h"
 
 CMscnProblem::CMscnProblem() {
@@ -358,7 +358,7 @@ void CMscnProblem::vGenerateInstance(int iInstanceSeed, int iD, int iF, int iM, 
   bSetM(iM);
   bSetS(iS);
 
-  CRandom c_random;
+  CRandom c_random(iInstanceSeed);
 
   c_cd.vFillRandom(c_random, I_C_MIN, I_C_MAX);
   c_cf.vFillRandom(c_random, I_C_MIN, I_C_MAX);
@@ -383,8 +383,8 @@ void CMscnProblem::vRandomMinmax(CMatrix &cMatrix, CRandom &cRandom) {
 
   for (int i = 0; i < cMatrix.iGetRows(); i++) {
     for (int j = 0; j < cMatrix.iGetCols() / 2; j++) {
-      cMatrix(i, 2 * j) = 0;//cRandom.dGetDouble(I_MIN, I_MAX);
-      cMatrix(i, 2 * j + 1) = 1000;//cMatrix(i, j) + cRandom.dGetDouble(I_MIN, I_MAX);
+      cMatrix(i, 2 * j) = cRandom.dGetDouble(0, I_MIN);
+      cMatrix(i, 2 * j + 1) = cRandom.dGetDouble(cMatrix(i, j), I_MAX);
     }
   }
 }

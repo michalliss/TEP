@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/legusie/Documents/PWR/TEP/TEP10/CMatrix.cpp" "/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/CMatrix.cpp.o"
-  "/home/legusie/Documents/PWR/TEP/TEP10/CMscnProblem.cpp" "/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/CMscnProblem.cpp.o"
-  "/home/legusie/Documents/PWR/TEP/TEP10/CRandom.cpp" "/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/CRandom.cpp.o"
-  "/home/legusie/Documents/PWR/TEP/TEP10/CRandomSearch.cpp" "/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/CRandomSearch.cpp.o"
-  "/home/legusie/Documents/PWR/TEP/TEP10/CSolution.cpp" "/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/CSolution.cpp.o"
-  "/home/legusie/Documents/PWR/TEP/TEP10/Utils.cpp" "/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/Utils.cpp.o"
-  "/home/legusie/Documents/PWR/TEP/TEP10/main.cpp" "/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/main.cpp.o"
+  "/home/legusie/GIT/TEP/TEP10/CMatrix.cpp" "/home/legusie/GIT/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/CMatrix.cpp.o"
+  "/home/legusie/GIT/TEP/TEP10/CMscnProblem.cpp" "/home/legusie/GIT/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/CMscnProblem.cpp.o"
+  "/home/legusie/GIT/TEP/TEP10/CRandom.cpp" "/home/legusie/GIT/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/CRandom.cpp.o"
+  "/home/legusie/GIT/TEP/TEP10/CRandomSearch.cpp" "/home/legusie/GIT/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/CRandomSearch.cpp.o"
+  "/home/legusie/GIT/TEP/TEP10/CSolution.cpp" "/home/legusie/GIT/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/CSolution.cpp.o"
+  "/home/legusie/GIT/TEP/TEP10/Utils.cpp" "/home/legusie/GIT/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/Utils.cpp.o"
+  "/home/legusie/GIT/TEP/TEP10/main.cpp" "/home/legusie/GIT/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

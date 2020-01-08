@@ -7,10 +7,10 @@
 #define I_DEFAULT_MATRIX_SIZE 1
 #include <fstream>
 #include <string>
-#include <string>
 #include <sstream>
 #include <vector>
 #include "CRandom.h"
+
 
 class CMatrix {
  private:

@@ -3,7 +3,7 @@
 //
 
 #include "CMatrix.h"
-#include "CRandom.h"
+
 
 CMatrix::CMatrix() {
   i_row = I_DEFAULT_MATRIX_SIZE;

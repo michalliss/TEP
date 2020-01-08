@@ -17,15 +17,14 @@ struct CSolution {
     CMatrix c_xf;
     CMatrix c_xm;
     std::vector<double> c_vector;
-    bool bLoad(std::string sFilename);
-    bool bSave(std::string sFilename);
-    int iLenght();
-    void vCalcVector();
+
 
     CSolution(int iD, int iF, int iM, int iS);
     CSolution();
+
+    bool bLoad(std::string sFilename);
+    int iLenght();
+    void vCalcVector();
 };
-
-
 
 #endif //TEP9__CSOLUTION_H_
