@@ -180,12 +180,17 @@ bool CMscnProblem::bMinMaxSatisfied(CSolution &cSolution) {
 }
 
 bool CMscnProblem::bCheckMinMax(CMatrix &cMatrix, CMatrix &cMinMax) {
+
   for (int i = 0; i < cMatrix.iGetRows(); i++) {
     for (int j = 0; j < cMatrix.iGetCols(); j++) {
-      if (cMatrix(i, j) < cMinMax(i, 2 * j) || cMatrix(i, j) > cMinMax(i, 2 * j + 1)) return false;
+
+      if (cMatrix(i, j) < cMinMax(i, 2 * j) || cMatrix(i, j) > cMinMax(i, 2 * j + 1)) {
+          return false;
+      }
     }
   }
   return true;
+
 }
 
 bool CMscnProblem::bTechCheck(CSolution &cSolution) {
@@ -330,26 +335,26 @@ bool CMscnProblem::bSave(std::string sFilename) {
 double CMscnProblem::getMin(int iIndex) {
   if (iIndex > i_d * i_f + i_f * i_m + i_m * i_s) return 0;
   if (iIndex < i_d * i_f) {
-    return c_xdminmax(iIndex % i_d, 2 * (iIndex / i_d));
+    return c_xdminmax(iIndex / i_f, 2 * (iIndex % i_d));
   } else if (iIndex < i_d * i_f + i_f * i_m) {
     int i_local_index = iIndex - i_d * i_f;
-    return c_xfminmax(i_local_index % i_f, 2 * (i_local_index / i_f));
+    return c_xfminmax(i_local_index / i_m, 2 * (i_local_index % i_f));
   } else if (iIndex < i_d * i_f + i_f * i_m + i_m * i_s) {
     int i_local_index = iIndex - i_d * i_f - i_f * i_m;
-    return c_xmminmax(i_local_index % i_m, 2 * (i_local_index / i_m));
+    return c_xmminmax(i_local_index / i_s, 2 * (i_local_index % i_m));
   }
 }
 
 double CMscnProblem::getMax(int iIndex) {
   if (iIndex > i_d * i_f + i_f * i_m + i_m * i_s) return 0;
   if (iIndex < i_d * i_f) {
-    return c_xdminmax(iIndex % i_d, 2 * (iIndex / i_d) + 1);
+    return c_xdminmax(iIndex / i_f, 2 * (iIndex % i_d) + 1);
   } else if (iIndex < i_d * i_f + i_f * i_m) {
     int i_local_index = iIndex - i_d * i_f;
-    return c_xfminmax(i_local_index % i_f, 2 * (i_local_index / i_f) + 1);
+    return c_xfminmax(i_local_index / i_m, 2 * (i_local_index % i_f) + 1);
   } else if (iIndex < i_d * i_f + i_f * i_m + i_m * i_s) {
     int i_local_index = iIndex - i_d * i_f - i_f * i_m;
-    return c_xmminmax(i_local_index % i_m, 2 * (i_local_index / i_m) + 1);
+    return c_xmminmax(i_local_index / i_s, 2 * (i_local_index % i_m) + 1);
   }
 }
 void CMscnProblem::vGenerateInstance(int iInstanceSeed, int iD, int iF, int iM, int iS) {
@@ -373,18 +378,18 @@ void CMscnProblem::vGenerateInstance(int iInstanceSeed, int iD, int iF, int iM, 
 
   c_p.vFillRandom(c_random, I_P_MIN, I_P_MAX);
 
-  vRandomMinmax(c_xdminmax, c_random);
-  vRandomMinmax(c_xfminmax, c_random);
-  vRandomMinmax(c_xmminmax, c_random);
+  vRandomMinmax(c_xdminmax, c_random, c_sd);
+  vRandomMinmax(c_xfminmax, c_random, c_sf);
+  vRandomMinmax(c_xmminmax, c_random, c_sm);
 
 }
 
-void CMscnProblem::vRandomMinmax(CMatrix &cMatrix, CRandom &cRandom) {
+void CMscnProblem::vRandomMinmax(CMatrix &cMatrix, CRandom &cRandom, CMatrix &cSBound) {
 
   for (int i = 0; i < cMatrix.iGetRows(); i++) {
-    for (int j = 0; j < cMatrix.iGetCols() / 2; j++) {
-      cMatrix(i, 2 * j) = cRandom.dGetDouble(0, I_MIN);
-      cMatrix(i, 2 * j + 1) = cRandom.dGetDouble(cMatrix(i, j), I_MAX);
+    for (int j = 0; j < cMatrix.iGetCols() ; j = j+2) {
+      cMatrix(i,  j) = 0;//cRandom.dGetDouble(0, I_MIN);
+      cMatrix(i,  j + 1) = cSBound(i)/cSBound.iGetCols();//cRandom.dGetDouble(cMatrix(i, j), I_MAX);
     }
   }
 }

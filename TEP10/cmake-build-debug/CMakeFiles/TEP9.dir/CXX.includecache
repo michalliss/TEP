@@ -18,6 +18,12 @@ vector
 CRandom.h
 /home/legusie/GIT/TEP/TEP10/CRandom.h
 
+/home/legusie/GIT/TEP/TEP10/CMscnProblem.cpp
+fstream
+-
+CMscnProblem.h
+/home/legusie/GIT/TEP/TEP10/CMscnProblem.h
+
 /home/legusie/GIT/TEP/TEP10/CMscnProblem.h
 CMatrix.h
 /home/legusie/GIT/TEP/TEP10/CMatrix.h
@@ -36,23 +42,9 @@ stdlib.h
 random
 -
 
-/home/legusie/GIT/TEP/TEP10/CRandomSearch.h
-CMscnProblem.h
-/home/legusie/GIT/TEP/TEP10/CMscnProblem.h
-iostream
--
-
 /home/legusie/GIT/TEP/TEP10/CSolution.h
 vector
 -
 CMatrix.h
 /home/legusie/GIT/TEP/TEP10/CMatrix.h
-
-/home/legusie/GIT/TEP/TEP10/main.cpp
-iostream
--
-CMscnProblem.h
-/home/legusie/GIT/TEP/TEP10/CMscnProblem.h
-CRandomSearch.h
-/home/legusie/GIT/TEP/TEP10/CRandomSearch.h
 

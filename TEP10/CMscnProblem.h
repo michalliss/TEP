@@ -15,7 +15,7 @@
 #define I_U_MIN 1
 #define I_U_MAX 1000
 #define I_S_MIN 1000
-#define I_S_MAX 100000
+#define I_S_MAX 10000
 #define I_P_MIN 1
 #define I_P_MAX 1000
 #define I_MIN 1
@@ -97,6 +97,7 @@ public:
     CMatrix& cGetXDminmax();
     CMatrix& cGetXFminmax();
     CMatrix& cGetXMminmax();
+    void vRandomMinmax(CMatrix& cMatrix, CRandom& cRandom, CMatrix& cSBound);
 };
 
 #endif //TEP9__CMSCNPROBLEM_H_

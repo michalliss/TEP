@@ -17,6 +17,7 @@ void runSimulation()
     std::cout << "Organiczenia: " << std::endl;
 
     bool b_succ;
+    std::cout << problem.dGetXDMax(0,0) << " " << problem.dGetXDMax(0,1);
     for (int i = 0; i<c_solution.iLenght(); i++) {
         std::cout << problem.getMin(i) << " < " << c_solution.c_vector[i] << " < " << problem.getMax(i) << std::endl;
     }
