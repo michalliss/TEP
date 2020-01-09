@@ -335,26 +335,26 @@ bool CMscnProblem::bSave(std::string sFilename) {
 double CMscnProblem::getMin(int iIndex) {
   if (iIndex > i_d * i_f + i_f * i_m + i_m * i_s) return 0;
   if (iIndex < i_d * i_f) {
-    return c_xdminmax(iIndex / i_f, 2 * (iIndex % i_d));
+    return c_xdminmax(iIndex / i_f, 2 * (iIndex % i_f));
   } else if (iIndex < i_d * i_f + i_f * i_m) {
     int i_local_index = iIndex - i_d * i_f;
-    return c_xfminmax(i_local_index / i_m, 2 * (i_local_index % i_f));
+    return c_xfminmax(i_local_index / i_m, 2 * (i_local_index % i_m));
   } else if (iIndex < i_d * i_f + i_f * i_m + i_m * i_s) {
     int i_local_index = iIndex - i_d * i_f - i_f * i_m;
-    return c_xmminmax(i_local_index / i_s, 2 * (i_local_index % i_m));
+    return c_xmminmax(i_local_index / i_s, 2 * (i_local_index % i_s));
   }
 }
 
 double CMscnProblem::getMax(int iIndex) {
   if (iIndex > i_d * i_f + i_f * i_m + i_m * i_s) return 0;
   if (iIndex < i_d * i_f) {
-    return c_xdminmax(iIndex / i_f, 2 * (iIndex % i_d) + 1);
+    return c_xdminmax(iIndex / i_f, 2 * (iIndex % i_f) + 1);
   } else if (iIndex < i_d * i_f + i_f * i_m) {
     int i_local_index = iIndex - i_d * i_f;
-    return c_xfminmax(i_local_index / i_m, 2 * (i_local_index % i_f) + 1);
+    return c_xfminmax(i_local_index / i_m, 2 * (i_local_index % i_m) + 1);
   } else if (iIndex < i_d * i_f + i_f * i_m + i_m * i_s) {
     int i_local_index = iIndex - i_d * i_f - i_f * i_m;
-    return c_xmminmax(i_local_index / i_s, 2 * (i_local_index % i_m) + 1);
+    return c_xmminmax(i_local_index / i_s, 2 * (i_local_index % i_s) + 1);
   }
 }
 void CMscnProblem::vGenerateInstance(int iInstanceSeed, int iD, int iF, int iM, int iS) {
@@ -385,7 +385,6 @@ void CMscnProblem::vGenerateInstance(int iInstanceSeed, int iD, int iF, int iM, 
 }
 
 void CMscnProblem::vRandomMinmax(CMatrix &cMatrix, CRandom &cRandom, CMatrix &cSBound) {
-
   for (int i = 0; i < cMatrix.iGetRows(); i++) {
     for (int j = 0; j < cMatrix.iGetCols() ; j = j+2) {
       cMatrix(i,  j) = 0;//cRandom.dGetDouble(0, I_MIN);

@@ -18,8 +18,6 @@
 #define I_S_MAX 10000
 #define I_P_MIN 1
 #define I_P_MAX 1000
-#define I_MIN 1
-#define I_MAX 1000
 
 class CMscnProblem {
 private:

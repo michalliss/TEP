@@ -24,6 +24,7 @@ CMatrix::CMatrix(const CMatrix &pcOther) : i_row(pcOther.i_row), i_col(pcOther.i
 
 void CMatrix::operator=(const CMatrix &pcOther) {
   if (&pcOther == this) return;
+  if (pd_tab != NULL) removeTab();
   i_row = pcOther.i_row;
   i_col = pcOther.i_col;
   pd_tab = pd_alloc_tab(i_row, i_col);

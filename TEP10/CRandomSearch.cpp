@@ -60,7 +60,7 @@ CSolution CRandomSearch::cSolve()
 {
     if (pc_problem==NULL) return CSolution();
 
-    CSolution c_best = c_get_random_good_solution();
+    CSolution c_best;
     bool b_succ;
     c_best = c_get_random_good_solution();
 
