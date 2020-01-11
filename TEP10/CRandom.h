@@ -9,9 +9,8 @@
 #include <stdlib.h>
 #include <random>
 
-
 class CRandom {
-    public:
+public:
     int iGetInt(int iFrom, int iTo);
     double dGetDouble(double dFrom, double dTo);
     void vSetSeed(unsigned long iSeed);
@@ -23,6 +22,5 @@ private:
     std::random_device c_rd;
     std::mt19937 c_gen;
 };
-
 
 #endif //TEP9_CRANDOM_H

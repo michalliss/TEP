@@ -62,11 +62,12 @@ CSolution CRandomSearch::cSolve()
 
     CSolution c_best;
     bool b_succ;
+
     c_best = c_get_random_good_solution();
 
     for (int i = 0; i<I_MAX_ITERATIONS; i++) {
         CSolution c_temp = c_get_random_good_solution();
-        if (pc_problem->dGetQuality(c_temp, b_succ)>pc_problem->dGetQuality(c_best, b_succ)) {
+        if ( pc_problem->dGetQuality(c_temp, b_succ)>pc_problem->dGetQuality(c_best, b_succ)) {
             c_best = c_temp;
         }
     }
@@ -79,9 +80,11 @@ CSolution CRandomSearch::cSolve2()
 
     CSolution c_best = c_get_random_good_solution();
     bool b_succ;
+
     while (!pc_problem->bConstraintsSatisfied(c_best, b_succ)) {
         c_best = c_get_random_good_solution();
     }
+
     for (int i = 0; i<I_MAX_ITERATIONS; i++) {
         CSolution c_temp = c_get_random_good_solution();
         bool b_succ;

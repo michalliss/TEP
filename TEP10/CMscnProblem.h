@@ -18,6 +18,7 @@
 #define I_S_MAX 10000
 #define I_P_MIN 1
 #define I_P_MAX 1000
+#define D_MAX_VAL_RATIO 1.0
 
 class CMscnProblem {
 private:
@@ -50,7 +51,7 @@ private:
     double d_calc_Ku(CMatrix& xd, CMatrix& xf, CMatrix& xm);
     int i_const_cost(CMatrix& matrix, int row);
     bool bMinMaxSatisfied(CSolution& cSolution);
-    void vRandomMinmax(CMatrix& cMatrix, CRandom& cRandom);
+    void vRandomMinmax(CMatrix& cMatrix, CRandom& cRandom, CMatrix& cSBound);
     double dGetQuality(CSolution& cSolution);
     bool bConstraintsSatisfied(CSolution& cSolution);
     double dGetMin(CMatrix& c_minmax, int i_row, int i_col);
@@ -95,7 +96,7 @@ public:
     CMatrix& cGetXDminmax();
     CMatrix& cGetXFminmax();
     CMatrix& cGetXMminmax();
-    void vRandomMinmax(CMatrix& cMatrix, CRandom& cRandom, CMatrix& cSBound);
+
 };
 
 #endif //TEP9__CMSCNPROBLEM_H_

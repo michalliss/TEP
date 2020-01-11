@@ -5,8 +5,9 @@
 #include <iostream>
 #include "CSolution.h"
 
-bool CSolution::bLoad(std::string sFilename) {
-    if (sFilename == "") return false;
+bool CSolution::bLoad(std::string sFilename)
+{
+    if (sFilename.empty()) return false;
     std::string s_ignore;
     std::ifstream f_file(sFilename);
     if (!f_file.good()) return false;
@@ -32,23 +33,28 @@ bool CSolution::bLoad(std::string sFilename) {
     return true;
 }
 
-int CSolution::iLenght() {
-    return i_d * i_f + i_f * i_m + i_m * i_s;
+int CSolution::iLenght()
+{
+    return i_d*i_f+i_f*i_m+i_m*i_s;
 }
 
-void CSolution::vCalcVector() {
+void CSolution::vCalcVector()
+{
     c_xd.vPushToVector(c_vector);
     c_xf.vPushToVector(c_vector);
     c_xm.vPushToVector(c_vector);
 }
 
-CSolution::CSolution(int iD, int iF, int iM, int iS) : i_d(iD), i_f(iF), i_m(iM), i_s(iS), c_xd(iD, iF), c_xf(iF, iM),
-                                                       c_xm(iM, iS) {
+CSolution::CSolution(int iD, int iF, int iM, int iS)
+        :i_d(iD), i_f(iF), i_m(iM), i_s(iS), c_xd(iD, iF), c_xf(iF, iM),
+         c_xm(iM, iS)
+{
 
 }
 
-CSolution::CSolution() {
-    CSolution(1,1,1,1);
+CSolution::CSolution()
+        :CSolution(1, 1, 1, 1)
+{
 }
 
 

@@ -6,9 +6,9 @@
 #define TEP9__UTILS_H_
 
 class Utils {
- public:
-  static bool bLoadSolution(std::string sFilename, double pdSolution[]);
-  static int iGetSolutionLength(std::string sFilename);
+public:
+    static bool bLoadSolution(std::string sFilename, double pdSolution[]);
+    static int iGetSolutionLength(std::string sFilename);
 };
 
 #endif //TEP9__UTILS_H_

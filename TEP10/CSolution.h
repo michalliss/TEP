@@ -9,22 +9,21 @@
 #include "CMatrix.h"
 
 struct CSolution {
-    int i_d;
-    int i_f;
-    int i_m;
-    int i_s;
-    CMatrix c_xd;
-    CMatrix c_xf;
-    CMatrix c_xm;
-    std::vector<double> c_vector;
+  int i_d;
+  int i_f;
+  int i_m;
+  int i_s;
+  CMatrix c_xd;
+  CMatrix c_xf;
+  CMatrix c_xm;
+  std::vector<double> c_vector;
 
+  CSolution(int iD, int iF, int iM, int iS);
+  CSolution();
 
-    CSolution(int iD, int iF, int iM, int iS);
-    CSolution();
-
-    bool bLoad(std::string sFilename);
-    int iLenght();
-    void vCalcVector();
+  bool bLoad(std::string sFilename);
+  int iLenght();
+  void vCalcVector();
 };
 
 #endif //TEP9__CSOLUTION_H_

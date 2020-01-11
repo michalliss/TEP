@@ -3,4 +3,4 @@ project(TEP9)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(TEP9 main.cpp CMscnProblem.cpp CMscnProblem.h CMatrix.cpp CMatrix.h CSolution.cpp CSolution.h Utils.cpp Utils.h CRandom.cpp CRandom.h CRandomSearch.cpp CRandomSearch.h)
+add_executable(TEP9 main.cpp CMscnProblem.cpp CMscnProblem.h CMatrix.cpp CMatrix.h CSolution.cpp CSolution.h Utils.cpp Utils.h CRandom.cpp CRandom.h CRandomSearch.cpp CRandomSearch.h constants.h)
