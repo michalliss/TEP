@@ -6,7 +6,7 @@
 #define TEP9__CSOLUTION_H_
 
 #include <vector>
-#include "CMatrix.h"
+#include "../CMatrix.h"
 
 struct CSolution {
   int i_d;
@@ -22,6 +22,7 @@ struct CSolution {
   CSolution();
 
   bool bLoad(std::string sFilename);
+  bool bLoadFromVector(std::vector<double> vSolution);
   int iLenght();
   void vCalcVector();
 };

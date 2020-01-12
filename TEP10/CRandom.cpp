@@ -18,7 +18,7 @@ CRandom::CRandom(unsigned long iSeed)
 
 int CRandom::iGetInt(int iFrom, int iTo)
 {
-    std::uniform_int_distribution<> c_dis(iFrom, iTo);
+    std::uniform_int_distribution<int> c_dis(iFrom, iTo);
     return c_dis(c_gen);
 }
 

@@ -5,8 +5,9 @@
 #ifndef TEP9__CMSCNPROBLEM_H_
 #define TEP9__CMSCNPROBLEM_H_
 
-#include "CMatrix.h"
+#include "../CMatrix.h"
 #include "CSolution.h"
+#include "../CProblem.h"
 #include <iostream>
 
 #define I_DEFAULT_SIZE 2
@@ -20,7 +21,7 @@
 #define I_P_MAX 1000
 #define D_MAX_VAL_RATIO 1.0
 
-class CMscnProblem {
+class CMscnProblem : public CProblem{
 private:
     int i_d;
     int i_f;
@@ -71,6 +72,7 @@ public:
     bool bSetCF(int iRow, int iCol, double dVal);
     bool bSetCM(int iRow, int iCol, double dVal);
 
+    bool vAllPositive(std::vector<double> vSolution);
     bool bSave(std::string sFilename);
     bool bLoad(std::string sFilename);
     bool bCheckMinMax(CMatrix& cMatrix, CMatrix& cMinMax);
@@ -79,6 +81,7 @@ public:
 
     double dGetQuality(CSolution cSolution, bool& pb_succ);
     bool bTechCheck(CSolution& cSolution);
+    bool bTechCheck(std::vector<double>& vSolution);
     bool bConstraintsSatisfied(CSolution& cSolution, bool& pb_succ);
     void vGenerateInstance(int iInstanceSeed, int iD, int iF, int iM, int iS);
 
@@ -96,6 +99,9 @@ public:
     CMatrix& cGetXDminmax();
     CMatrix& cGetXFminmax();
     CMatrix& cGetXMminmax();
+    double dGetQuality(std::vector<double> vSolution, bool& bSucc) override;
+    bool bConstraintsSatisfied(std::vector<double> vector, bool& bSucc) override;
+    int getSize() override;
 
 };
 

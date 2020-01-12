@@ -233,6 +233,23 @@ bool CMscnProblem::bTechCheck(CSolution& cSolution)
     return true;
 }
 
+bool CMscnProblem::bTechCheck(std::vector<double>& vSolution)
+{
+    if (&vSolution==NULL) return false;
+    if (vSolution.size()!=getSize()) return false;
+    if (!vAllPositive(vSolution)) return false;
+
+    return true;
+}
+
+bool CMscnProblem::vAllPositive(std::vector<double> vSolution)
+{
+    for (int i = 0; i<vSolution.size(); i++) {
+        if (vSolution[i]<0) return false;
+    }
+    return true;
+}
+
 bool CMscnProblem::bConstraintsSatisfied(CSolution& cSolution, bool& pb_succ)
 {
     if (!bTechCheck(cSolution)) return false;
@@ -490,5 +507,31 @@ CMatrix& CMscnProblem::cGetXMminmax()
     return c_xmminmax;
 }
 
+double CMscnProblem::dGetQuality(std::vector<double> vSolution, bool& bSucc)
+{
+    if(!bTechCheck(vSolution)){
+        bSucc = false;
+        return false;
+    }
+    bSucc = true;
+    CSolution c_solution(i_d, i_f, i_m, i_s);
+    c_solution.bLoadFromVector(vSolution);
+    return dGetQuality(c_solution);
+}
+bool CMscnProblem::bConstraintsSatisfied(std::vector<double> vSolution, bool& bSucc)
+{
+    if(!bTechCheck(vSolution)){
+        bSucc = false;
+        return false;
+    }
+    bSucc = true;
+    CSolution c_solution(i_d, i_f, i_m, i_s);
+    c_solution.bLoadFromVector(vSolution);
+    return bConstraintsSatisfied(c_solution);
+}
+int CMscnProblem::getSize()
+{
+    return i_d*i_f+i_f*i_m+i_m*i_s;
+}
 
 

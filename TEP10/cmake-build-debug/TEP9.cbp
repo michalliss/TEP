@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug"/>
+				<Option working_dir="/home/legusie/GIT/TEP/TEP10/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug"/>
+				<Option working_dir="/home/legusie/GIT/TEP/TEP10/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TEP9">
-				<Option output="/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/TEP9" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug"/>
+				<Option output="/home/legusie/GIT/TEP/TEP10/cmake-build-debug/TEP9" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/legusie/GIT/TEP/TEP10/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -43,15 +43,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 TEP9"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 TEP9"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TEP9/fast">
-				<Option output="/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/TEP9" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug"/>
+				<Option output="/home/legusie/GIT/TEP/TEP10/cmake-build-debug/TEP9" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/legusie/GIT/TEP/TEP10/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -65,66 +65,114 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 TEP9/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 TEP9/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug"/>
+				<Option working_dir="/home/legusie/GIT/TEP/TEP10/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/legusie/GIT/TEP/TEP10/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/CMatrix.cpp">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/CMatrix.cpp">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/CMatrix.h">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/CMatrix.h">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/CMscnProblem.cpp">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/CProblem.cpp">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/CMscnProblem.h">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/CProblem.h">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/CRandom.cpp">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/CRandom.cpp">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/CRandom.h">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/CRandom.h">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/CRandomSearch.cpp">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/Controler/CControler.cpp">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/CRandomSearch.h">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/Controler/CControler.h">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/CSolution.cpp">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/Controler/CControlerIter.cpp">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/CSolution.h">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/Controler/CControlerIter.h">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/Utils.cpp">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/Controler/CControlerTime.cpp">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/Utils.h">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/Controler/CControlerTime.h">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/constants.h">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/MSCN/CMscnProblem.cpp">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/main.cpp">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/MSCN/CMscnProblem.h">
 			<Option target="TEP9"/>
 		</Unit>
-		<Unit filename="/home/legusie/Documents/PWR/TEP/TEP10/CMakeLists.txt">
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/MSCN/CSolution.cpp">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/MSCN/CSolution.h">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/SOLVE/CDiffEvol.cpp">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/SOLVE/CDiffEvol.h">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/SOLVE/CIndividual.cpp">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/SOLVE/CIndividual.h">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/SOLVE/CPopulation.cpp">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/SOLVE/CPopulation.h">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/SOLVE/CRandomSearch.cpp">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/SOLVE/CRandomSearch.h">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/SOLVE/CSolver.cpp">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/SOLVE/CSolver.h">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/Utils.cpp">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/Utils.h">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/constants.h">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/main.cpp">
+			<Option target="TEP9"/>
+		</Unit>
+		<Unit filename="/home/legusie/GIT/TEP/TEP10/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

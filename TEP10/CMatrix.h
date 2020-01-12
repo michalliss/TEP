@@ -42,7 +42,7 @@ public:
 
     bool bLoadFromStream(std::ifstream& sStream, int iRow, int iCol);
     bool bLoadFromStream(std::ifstream& sStream, int iCol);
-    bool bLoadFromArray(double* pdArray, int iRow, int iCol, int iIndex);
+    bool bLoadFromVector(std::vector<double> vVector, int iRow, int iCol, int iStartIndex);
     void vPushToVector(std::vector<double>& cVector);
 
     std::string sToString();

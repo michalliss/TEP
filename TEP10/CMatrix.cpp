@@ -104,15 +104,14 @@ bool CMatrix::bLoadFromStream(std::ifstream& sStream, int iCol)
     return bLoadFromStream(sStream, 1, iCol);
 }
 
-bool CMatrix::bLoadFromArray(double* pdArray, int iRow, int iCol, int iIndex)
-{
+bool CMatrix::bLoadFromVector(std::vector<double> vVector, int iRow, int iCol, int iStartIndex){
     if (iRow<0 || iCol<0) return false;
 
     bResize(iRow, iCol);
     for (int i = 0; i<i_row; i++) {
         for (int j = 0; j<i_col; j++) {
-            pd_tab[i][j] = pdArray[iIndex];
-            iIndex++;
+            pd_tab[i][j] = vVector[iStartIndex];
+            iStartIndex++;
         }
     }
     return true;

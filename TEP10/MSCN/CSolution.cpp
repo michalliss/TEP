@@ -5,6 +5,27 @@
 #include <iostream>
 #include "CSolution.h"
 
+CSolution::CSolution(int iD, int iF, int iM, int iS)
+        :i_d(iD), i_f(iF), i_m(iM), i_s(iS), c_xd(iD, iF), c_xf(iF, iM),
+         c_xm(iM, iS)
+{
+
+}
+
+CSolution::CSolution()
+        :CSolution(1, 1, 1, 1)
+{
+}
+
+bool CSolution::bLoadFromVector(std::vector<double> vSolution)
+{
+    if(vSolution.size() != iLenght()) return false;
+    c_xd.bLoadFromVector(vSolution, i_d, i_f, 0);
+    c_xf.bLoadFromVector(vSolution, i_f, i_m, i_d*i_f);
+    c_xm.bLoadFromVector(vSolution, i_m, i_s, i_d*i_f+i_f*i_m);
+    return true;
+}
+
 bool CSolution::bLoad(std::string sFilename)
 {
     if (sFilename.empty()) return false;
@@ -45,16 +66,6 @@ void CSolution::vCalcVector()
     c_xm.vPushToVector(c_vector);
 }
 
-CSolution::CSolution(int iD, int iF, int iM, int iS)
-        :i_d(iD), i_f(iF), i_m(iM), i_s(iS), c_xd(iD, iF), c_xf(iF, iM),
-         c_xm(iM, iS)
-{
 
-}
-
-CSolution::CSolution()
-        :CSolution(1, 1, 1, 1)
-{
-}
 
 
