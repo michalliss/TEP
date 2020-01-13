@@ -28,13 +28,14 @@ void v_test_method(CSolver& c_solver, CProblem& c_problem, CControler& c_control
 void runSimulation()
 {
     CMscnProblem c_problem;
-    //c_problem.vGenerateInstance(I_SEED, I_PROBLEM_D, I_PROBLEM_F, I_PROBLEM_M, I_PROBLEM_S);
-    c_problem.bLoad(S_FILE_PROBLEM_LOAD);
+    c_problem.vGenerateInstance(I_SEED, I_PROBLEM_D, I_PROBLEM_F, I_PROBLEM_M, I_PROBLEM_S);
+    //c_problem.bLoad(S_FILE_PROBLEM_LOAD);
     c_problem.bSave(S_FILE_PROBLEM_SAVE);
 
     //------------------DIFF EVOL------------------------------------------------
-    CSolver* c_solver = new CDiffEvol();
-    CControler* c_controler = new CControlerTime(10);
+    CSolver* c_solver = new CDiffEvol(I_SEED);
+    CControler* c_controler = new CControlerTime(I_DEFAULT_TIME);
+    //CControler* c_controler = new CControlerIter(I_DEFAULT_ITERATIONS);
 
     v_test_method(*c_solver, c_problem, *c_controler);
 
@@ -42,7 +43,7 @@ void runSimulation()
 
     //-------------------------RANDOM-------------------------------------------------
 
-    c_solver = new CRandomSearch();
+    c_solver = new CRandomSearch(I_SEED);
 
     v_test_method(*c_solver, c_problem, *c_controler);
 

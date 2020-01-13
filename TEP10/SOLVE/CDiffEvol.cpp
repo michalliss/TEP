@@ -6,13 +6,12 @@
 #include "CPopulation.h"
 std::vector<double> CDiffEvol::cSolve()
 {
-    CPopulation c_population(I_POPULATION_SIZE, *pc_problem);
+    CPopulation c_population(I_POPULATION_SIZE, *pc_problem, c_random);
     std::cout << "populacja gotowa" << std::endl;
 
     pc_controller->vStart();
-    while(pc_controller->bContinue()) {
-        pc_controller->vUpdate();
-        for (int i = 0; i<c_population.iSize(); i++) {
+    while (pc_controller->bContinue()) {
+        for (int i = 0; i<c_population.iSize() and pc_controller->bContinue(); i++) {
             CIndividual& c_ind = c_population.getVPpopulation()[i];
             CIndividual& c_ind_base = c_population.getRandom(c_random);
             CIndividual& c_ind_0 = c_population.getRandom(c_random);
@@ -32,10 +31,11 @@ std::vector<double> CDiffEvol::cSolve()
                 }
                 bool b_succ;
 
-               // vRepairGenotype(c_new);
-
-                if (pc_problem->bConstraintsSatisfied(c_new.v_genotype, b_succ) &&  pc_problem->dGetQuality(c_new.v_genotype, b_succ)
-                        >pc_problem->dGetQuality(c_ind.v_genotype, b_succ)) {
+                // vRepairGenotype(c_new);
+                pc_controller->vUpdate();
+                if (pc_problem->bConstraintsSatisfied(c_new.v_genotype, b_succ)
+                        && pc_problem->dGetQuality(c_new.v_genotype, b_succ)
+                                >pc_problem->dGetQuality(c_ind.v_genotype, b_succ)) {
                     //std::cout << "poprawa";
                     c_ind = c_new;
                 }
@@ -54,6 +54,17 @@ void CDiffEvol::vRepairGenotype(CIndividual& cIndividual)
 
         }
     }
+}
+CDiffEvol::CDiffEvol()
+        :CSolver()
+{
+
+}
+
+CDiffEvol::CDiffEvol(int iSeed)
+        :CSolver(), c_random(iSeed)
+{
+
 }
 
 

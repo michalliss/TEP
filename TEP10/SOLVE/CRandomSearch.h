@@ -25,7 +25,7 @@ private:
 public:
     CRandomSearch();
     explicit CRandomSearch(unsigned long iSeed);
-    std::vector<double> cSolve();
+    std::vector<double> cSolve() override;
 };
 
 #endif //TEP9_CRANDOMSEARCH_H

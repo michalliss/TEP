@@ -9,47 +9,45 @@ std::vector<CIndividual>& CPopulation::getVPpopulation()
     return v_population;
 }
 
-void CPopulation::vInitialize(int iSize)
+void CPopulation::vInitialize(int iSize, CRandom& cRandom)
 {
     for (int i = 0; i<iSize; i++) {
-        v_population.push_back(c_get_random_good_ind());
+        v_population.push_back(c_get_random_good_ind(cRandom));
         std::cout << "osobnik: " << i << std::endl;
     }
 }
-CIndividual CPopulation::c_get_random_ind()
+CIndividual CPopulation::c_get_random_ind(CRandom &cRandom)
 {
     if (pc_problem==NULL) return CIndividual();
-    CRandom c_random;
     CIndividual c_ind(pc_problem->getSize());
 
     std::vector<double>& v_ind = c_ind.v_genotype;
     for (int i = 0; i<v_ind.size(); i++) {
-        v_ind[i] = c_random.dGetDouble(pc_problem->getMin(i), pc_problem->getMax(i));
+        v_ind[i] = cRandom.dGetDouble(pc_problem->getMin(i), pc_problem->getMax(i));
     }
     return c_ind;
 }
 
-CIndividual CPopulation::c_get_random_good_ind()
+CIndividual CPopulation::c_get_random_good_ind(CRandom &cRandom)
 {
     if (pc_problem==NULL) return CIndividual();
-    CRandom c_random;
-    CIndividual c_ind = c_get_random_ind();
+    CIndividual c_ind = c_get_random_ind(cRandom);
     bool b_succ = true;
     while (!pc_problem->bConstraintsSatisfied(c_ind.v_genotype, b_succ)) {
-        c_ind = c_get_random_ind();
+        c_ind = c_get_random_ind(cRandom);
     }
     return c_ind;
 }
 
-CPopulation::CPopulation(CProblem& cProblem)
+CPopulation::CPopulation(CProblem& cProblem, CRandom& cRandom)
 {
     pc_problem = &cProblem;
-    vInitialize(I_DEFAULT_POPULATION_SIZE);
+    vInitialize(I_DEFAULT_POPULATION_SIZE, cRandom);
 }
-CPopulation::CPopulation(int iSize, CProblem& cProblem)
+CPopulation::CPopulation(int iSize, CProblem& cProblem, CRandom &cRandom)
 {
     pc_problem = &cProblem;
-    vInitialize(iSize);
+    vInitialize(iSize, cRandom);
 }
 
 CIndividual& CPopulation::getRandom(CRandom& cRandom)

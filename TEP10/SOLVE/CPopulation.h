@@ -12,14 +12,16 @@
 #define I_DEFAULT_POPULATION_SIZE 10
 class CPopulation {
 private:
+
     CProblem* pc_problem;
     std::vector<CIndividual> v_population;
-    CIndividual c_get_random_good_ind();
-    CIndividual c_get_random_ind();
+
+    CIndividual c_get_random_ind(CRandom& cRandom);
+    CIndividual c_get_random_good_ind(CRandom& cRandom);
 public:
-    CPopulation(CProblem &cProblem);
-    CPopulation(int iSize, CProblem& cProblem);
-    void vInitialize(int iSize);
+    CPopulation(int iSize, CProblem& cProblem, CRandom& cRandom);
+    CPopulation(CProblem& cProblem, CRandom& cRandom);
+
     void vSetProblem(CProblem& cProblem);
     std::vector<CIndividual>& getVPpopulation();
     int iSize() { return v_population.size(); }
@@ -27,6 +29,7 @@ public:
     CIndividual getBest();
     friend std::ostream& operator<<(std::ostream& os, const CPopulation& population);
 
+    void vInitialize(int iSize, CRandom& cRandom);
 };
 
 #endif //TEP9_CPOPULATION_H

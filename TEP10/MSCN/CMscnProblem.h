@@ -76,8 +76,8 @@ public:
     bool bSave(std::string sFilename);
     bool bLoad(std::string sFilename);
     bool bCheckMinMax(CMatrix& cMatrix, CMatrix& cMinMax);
-    double getMin(int iIndex);
-    double getMax(int iIndex);
+    double getMin(int iIndex) override;
+    double getMax(int iIndex) override;
 
     double dGetQuality(CSolution cSolution, bool& pb_succ);
     bool bTechCheck(CSolution& cSolution);

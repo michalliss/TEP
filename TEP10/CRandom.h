@@ -4,9 +4,9 @@
 
 #ifndef TEP9_CRANDOM_H
 #define TEP9_CRANDOM_H
-#include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <ctime>
+#include <cstdio>
+#include <cstdlib>
 #include <random>
 
 class CRandom {
@@ -16,7 +16,7 @@ public:
     void vSetSeed(unsigned long iSeed);
 
     CRandom();
-    CRandom(unsigned long iSeed);
+    explicit CRandom(unsigned long iSeed);
 
 private:
     std::random_device c_rd;
