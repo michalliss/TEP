@@ -36,11 +36,11 @@ std::vector<double> CRandomSearch::c_get_random_good_solution()
     */
 }
 
-void CRandomSearch::v_fill_good(CMatrix& cMatrix, CMatrix& cMinmax)
+void CRandomSearch::v_fill_good(CMatrix& c_matrix, CMatrix& c_minmax)
 {
-    for (int i = 0; i<cMatrix.iGetRows(); i++) {
-        for (int j = 0; j<cMatrix.iGetCols(); j++) {
-            cMatrix(i, j) = c_random.dGetDouble(cMinmax(i, 2*j), cMinmax(i, 2*j+1));
+    for (int i = 0; i<c_matrix.iGetRows(); i++) {
+        for (int j = 0; j<c_matrix.iGetCols(); j++) {
+            c_matrix(i, j) = c_random.dGetDouble(c_minmax(i, 2*j), c_minmax(i, 2*j+1));
         }
     }
 }
@@ -70,8 +70,8 @@ std::vector<double> CRandomSearch::cSolve()
     for (int i = 0; i<I_MAX_ITERATIONS; i++) {
         std::vector<double> v_temp = c_get_random_good_solution();
         bool b_succ = true;
-        if (pc_problem->bConstraintsSatisfied(v_temp, b_succ) &&
-                pc_problem->dGetQuality(v_temp, b_succ)>pc_problem->dGetQuality(v_best, b_succ)) {
+        if (pc_problem->b_constraints_satisfied(v_temp, b_succ) &&
+                pc_problem->dGetQuality(v_temp, b_succ)>pc_problem->d_get_quality(v_best, b_succ)) {
             v_best = v_temp;
         }
     }

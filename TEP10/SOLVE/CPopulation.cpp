@@ -16,25 +16,25 @@ void CPopulation::vInitialize(int iSize, CRandom& cRandom)
         std::cout << "osobnik: " << i << std::endl;
     }
 }
-CIndividual CPopulation::c_get_random_ind(CRandom &cRandom)
+CIndividual CPopulation::c_get_random_ind(CRandom &c_random)
 {
     if (pc_problem==NULL) return CIndividual();
     CIndividual c_ind(pc_problem->getSize());
 
     std::vector<double>& v_ind = c_ind.v_genotype;
     for (int i = 0; i<v_ind.size(); i++) {
-        v_ind[i] = cRandom.dGetDouble(pc_problem->getMin(i), pc_problem->getMax(i));
+        v_ind[i] = c_random.dGetDouble(pc_problem->getMin(i), pc_problem->getMax(i));
     }
     return c_ind;
 }
 
-CIndividual CPopulation::c_get_random_good_ind(CRandom &cRandom)
+CIndividual CPopulation::c_get_random_good_ind(CRandom &c_random)
 {
     if (pc_problem==NULL) return CIndividual();
-    CIndividual c_ind = c_get_random_ind(cRandom);
+    CIndividual c_ind = c_get_random_ind(c_random);
     bool b_succ = true;
     while (!pc_problem->bConstraintsSatisfied(c_ind.v_genotype, b_succ)) {
-        c_ind = c_get_random_ind(cRandom);
+        c_ind = c_get_random_ind(c_random);
     }
     return c_ind;
 }
@@ -55,7 +55,7 @@ CIndividual& CPopulation::getRandom(CRandom& cRandom)
     return v_population[cRandom.iGetInt(0, v_population.size()-1)];
 }
 
-CIndividual CPopulation::getBest()
+CIndividual& CPopulation::getBest()
 {
     int i_best_index = 0;
     bool b_succ;

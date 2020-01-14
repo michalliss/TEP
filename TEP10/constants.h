@@ -14,7 +14,7 @@
 #define I_PROBLEM_M 3
 #define I_PROBLEM_S 3
 
-#define I_DEFAULT_ITERATIONS 1000
+#define I_DEFAULT_ITERATIONS 100000
 #define I_DEFAULT_TIME 10
 
 #define MSG_ROZWIAZANIE "Rozwiazanie: "

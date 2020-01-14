@@ -120,13 +120,13 @@ double CMscnProblem::dGetQuality(CSolution cSolution, bool& pb_succ)
 {
     if (!bTechCheck(cSolution)) return false;
     pb_succ = true;
-    return dGetQuality(cSolution);
+    return d_get_quality(cSolution);
 }
 
-double CMscnProblem::dGetQuality(CSolution& cSolution)
+double CMscnProblem::d_get_quality(CSolution& c_solution)
 {
-    return d_calc_P(cSolution.c_xm)-d_calc_Kt(cSolution.c_xd, cSolution.c_xf, cSolution.c_xm)
-            -d_calc_Ku(cSolution.c_xd, cSolution.c_xf, cSolution.c_xm);
+    return d_calc_P(c_solution.c_xm)-d_calc_Kt(c_solution.c_xd, c_solution.c_xf, c_solution.c_xm)
+            -d_calc_Ku(c_solution.c_xd, c_solution.c_xf, c_solution.c_xm);
 }
 
 double CMscnProblem::d_calc_P(CMatrix& xm)
@@ -191,11 +191,11 @@ double CMscnProblem::d_calc_Ku(CMatrix& xd, CMatrix& xf, CMatrix& xm)
     return result;
 }
 
-bool CMscnProblem::bMinMaxSatisfied(CSolution& cSolution)
+bool CMscnProblem::b_minmax_satisfied(CSolution& c_solution)
 {
-    return bCheckMinMax(cSolution.c_xd, c_xdminmax) &&
-            bCheckMinMax(cSolution.c_xf, c_xfminmax) &&
-            bCheckMinMax(cSolution.c_xm, c_xmminmax);
+    return bCheckMinMax(c_solution.c_xd, c_xdminmax) &&
+            bCheckMinMax(c_solution.c_xf, c_xfminmax) &&
+            bCheckMinMax(c_solution.c_xm, c_xmminmax);
 }
 
 bool CMscnProblem::bCheckMinMax(CMatrix& cMatrix, CMatrix& cMinMax)
@@ -254,35 +254,35 @@ bool CMscnProblem::bConstraintsSatisfied(CSolution& cSolution, bool& pb_succ)
 {
     if (!bTechCheck(cSolution)) return false;
     pb_succ = true;
-    return bConstraintsSatisfied(cSolution);
+    return b_constraints_satisfied(cSolution);
 }
 
-bool CMscnProblem::bConstraintsSatisfied(CSolution& cSolution)
+bool CMscnProblem::b_constraints_satisfied(CSolution& c_solution)
 {
-    if (!bMinMaxSatisfied(cSolution)) return false;
+    if (!b_minmax_satisfied(c_solution)) return false;
 
     for (int d = 0; d<i_d; d++) {
-        if (cSolution.c_xd.dRowSum(d)>c_sd(d)) return false;
+        if (c_solution.c_xd.dRowSum(d)>c_sd(d)) return false;
     }
 
     for (int f = 0; f<i_f; f++) {
-        if (cSolution.c_xf.dRowSum(f)>c_sf(f)) return false;
+        if (c_solution.c_xf.dRowSum(f)>c_sf(f)) return false;
     }
 
     for (int m = 0; m<i_m; m++) {
-        if (cSolution.c_xm.dRowSum(m)>c_sm(m)) return false;
+        if (c_solution.c_xm.dRowSum(m)>c_sm(m)) return false;
     }
 
     for (int s = 0; s<i_s; s++) {
-        if (cSolution.c_xm.dColSum(s)>c_ss(s)) return false;
+        if (c_solution.c_xm.dColSum(s)>c_ss(s)) return false;
     }
 
     for (int f = 0; f<i_f; f++) {
-        if (cSolution.c_xd.dColSum(f)<cSolution.c_xf.dRowSum(f)) return false;
+        if (c_solution.c_xd.dColSum(f)<c_solution.c_xf.dRowSum(f)) return false;
     }
 
     for (int m = 0; m<i_m; m++) {
-        if (cSolution.c_xf.dColSum(m)<cSolution.c_xm.dRowSum(m)) return false;
+        if (c_solution.c_xf.dColSum(m)<c_solution.c_xm.dRowSum(m)) return false;
     }
     return true;
 }
@@ -424,13 +424,13 @@ void CMscnProblem::vGenerateInstance(int iInstanceSeed, int iD, int iF, int iM, 
     c_ss.vFillRandom(c_random, I_S_MIN, I_S_MAX);
     c_p.vFillRandom(c_random, I_P_MIN, I_P_MAX);
 
-    vRandomMinmax(c_xdminmax, c_random, c_sd);
-    vRandomMinmax(c_xfminmax, c_random, c_sf);
-    vRandomMinmax(c_xmminmax, c_random, c_sm);
+    v_random_minmax(c_xdminmax, c_random, c_sd);
+    v_random_minmax(c_xfminmax, c_random, c_sf);
+    v_random_minmax(c_xmminmax, c_random, c_sm);
 
 }
 
-void CMscnProblem::vRandomMinmax(CMatrix& cMatrix, CRandom& cRandom, CMatrix& cSBound)
+void CMscnProblem::v_random_minmax(CMatrix& cMatrix, CRandom& cRandom, CMatrix& cSBound)
 {
     for (int i = 0; i<cMatrix.iGetRows(); i++) {
         for (int j = 0; j<cMatrix.iGetCols(); j = j+2) {
@@ -460,38 +460,38 @@ int CMscnProblem::iGetS() const
     return i_s;
 }
 
-double CMscnProblem::dGetMin(CMatrix& c_minmax, int i_row, int i_col)
+double CMscnProblem::d_get_min(CMatrix& c_minmax, int i_row, int i_col)
 {
     return c_minmax(i_row, 2*i_col);
 }
-double CMscnProblem::dGetMax(CMatrix& c_minmax, int i_row, int i_col)
+double CMscnProblem::d_get_max(CMatrix& c_minmax, int i_row, int i_col)
 {
     return c_minmax(i_row, 2*i_col+1);
 }
 
 double CMscnProblem::dGetXDMin(int iRow, int iCol)
 {
-    return dGetMin(c_xdminmax, iRow, iCol);
+    return d_get_min(c_xdminmax, iRow, iCol);
 }
 double CMscnProblem::dGetXDMax(int iRow, int iCol)
 {
-    return dGetMax(c_xdminmax, iRow, iCol);
+    return d_get_max(c_xdminmax, iRow, iCol);
 }
 double CMscnProblem::dGetXFMin(int iRow, int iCol)
 {
-    return dGetMin(c_xfminmax, iRow, iCol);
+    return d_get_min(c_xfminmax, iRow, iCol);
 }
 double CMscnProblem::dGetXFMax(int iRow, int iCol)
 {
-    return dGetMax(c_xfminmax, iRow, iCol);
+    return d_get_max(c_xfminmax, iRow, iCol);
 }
 double CMscnProblem::dGetXMMin(int iRow, int iCol)
 {
-    return dGetMin(c_xmminmax, iRow, iCol);
+    return d_get_min(c_xmminmax, iRow, iCol);
 }
 double CMscnProblem::dGetXMMax(int iRow, int iCol)
 {
-    return dGetMax(c_xmminmax, iRow, iCol);
+    return d_get_max(c_xmminmax, iRow, iCol);
 }
 
 CMatrix& CMscnProblem::cGetXDminmax()
@@ -507,7 +507,20 @@ CMatrix& CMscnProblem::cGetXMminmax()
     return c_xmminmax;
 }
 
-double CMscnProblem::dGetQuality(std::vector<double> vSolution, bool& bSucc)
+double CMscnProblem::dGetQuality(std::vector<double>& vSolution, bool& bSucc)
+{
+
+
+    if(!bTechCheck(vSolution)){
+        bSucc = false;
+        return false;
+    }
+    bSucc = true;
+    CSolution c_solution(i_d, i_f, i_m, i_s);
+    c_solution.bLoadFromVector(vSolution);
+    return d_get_quality(c_solution);
+}
+bool CMscnProblem::bConstraintsSatisfied(std::vector<double>& vSolution, bool& bSucc)
 {
     if(!bTechCheck(vSolution)){
         bSucc = false;
@@ -516,19 +529,14 @@ double CMscnProblem::dGetQuality(std::vector<double> vSolution, bool& bSucc)
     bSucc = true;
     CSolution c_solution(i_d, i_f, i_m, i_s);
     c_solution.bLoadFromVector(vSolution);
-    return dGetQuality(c_solution);
+    return b_constraints_satisfied(c_solution);
 }
-bool CMscnProblem::bConstraintsSatisfied(std::vector<double> vSolution, bool& bSucc)
+
+void CMscnProblem::v_repair_solution(CSolution& c_solution)
 {
-    if(!bTechCheck(vSolution)){
-        bSucc = false;
-        return false;
-    }
-    bSucc = true;
-    CSolution c_solution(i_d, i_f, i_m, i_s);
-    c_solution.bLoadFromVector(vSolution);
-    return bConstraintsSatisfied(c_solution);
+ 
 }
+
 int CMscnProblem::getSize()
 {
     return i_d*i_f+i_f*i_m+i_m*i_s;

@@ -21,7 +21,7 @@ class CRandomSearch : public CSolver{
 private:
     CRandom c_random;
     std::vector<double> c_get_random_good_solution();
-    void v_fill_good(CMatrix& cMatrix, CMatrix& cMinmax);
+    void v_fill_good(CMatrix& c_matrix, CMatrix& c_minmax);
 public:
     CRandomSearch();
     explicit CRandomSearch(unsigned long iSeed);

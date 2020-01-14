@@ -51,12 +51,16 @@ private:
     double d_calc_Kt(CMatrix& xd, CMatrix& xf, CMatrix& xm);
     double d_calc_Ku(CMatrix& xd, CMatrix& xf, CMatrix& xm);
     int i_const_cost(CMatrix& matrix, int row);
-    bool bMinMaxSatisfied(CSolution& cSolution);
-    void vRandomMinmax(CMatrix& cMatrix, CRandom& cRandom, CMatrix& cSBound);
-    double dGetQuality(CSolution& cSolution);
-    bool bConstraintsSatisfied(CSolution& cSolution);
-    double dGetMin(CMatrix& c_minmax, int i_row, int i_col);
-    double dGetMax(CMatrix& c_minmax, int i_row, int i_col);
+
+    bool b_minmax_satisfied(CSolution& c_solution);
+    double d_get_quality(CSolution& c_solution);
+    bool b_constraints_satisfied(CSolution& c_solution);
+
+    void v_random_minmax(CMatrix& cMatrix, CRandom& cRandom, CMatrix& cSBound);
+    double d_get_min(CMatrix& c_minmax, int i_row, int i_col);
+    double d_get_max(CMatrix& c_minmax, int i_row, int i_col);
+
+    void v_repair_solution(CSolution& c_solution);
 
 public:
     CMscnProblem();
@@ -99,8 +103,8 @@ public:
     CMatrix& cGetXDminmax();
     CMatrix& cGetXFminmax();
     CMatrix& cGetXMminmax();
-    double dGetQuality(std::vector<double> vSolution, bool& bSucc) override;
-    bool bConstraintsSatisfied(std::vector<double> vector, bool& bSucc) override;
+    double dGetQuality(std::vector<double>& vSolution, bool& bSucc) override;
+    bool bConstraintsSatisfied(std::vector<double>& vector, bool& bSucc) override;
     int getSize() override;
 
 };

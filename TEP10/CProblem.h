@@ -8,8 +8,8 @@
 #include <vector>
 class CProblem {
 public:
-    virtual double dGetQuality(std::vector<double> vSolution, bool& bSucc) = 0;
-    virtual bool bConstraintsSatisfied(std::vector<double> vSolution, bool& bSucc) = 0;
+    virtual double dGetQuality(std::vector<double>& vSolution, bool& bSucc) = 0;
+    virtual bool bConstraintsSatisfied(std::vector<double>& vSolution, bool& bSucc) = 0;
     virtual double getMin(int iIndex) = 0;
     virtual double getMax(int iIndex) = 0;
     virtual int getSize() = 0;

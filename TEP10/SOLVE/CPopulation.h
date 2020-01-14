@@ -16,8 +16,8 @@ private:
     CProblem* pc_problem;
     std::vector<CIndividual> v_population;
 
-    CIndividual c_get_random_ind(CRandom& cRandom);
-    CIndividual c_get_random_good_ind(CRandom& cRandom);
+    CIndividual c_get_random_ind(CRandom& c_random);
+    CIndividual c_get_random_good_ind(CRandom& c_random);
 public:
     CPopulation(int iSize, CProblem& cProblem, CRandom& cRandom);
     CPopulation(CProblem& cProblem, CRandom& cRandom);
@@ -26,7 +26,7 @@ public:
     std::vector<CIndividual>& getVPpopulation();
     int iSize() { return v_population.size(); }
     CIndividual& getRandom(CRandom& cRandom);
-    CIndividual getBest();
+    CIndividual& getBest();
     friend std::ostream& operator<<(std::ostream& os, const CPopulation& population);
 
     void vInitialize(int iSize, CRandom& cRandom);
