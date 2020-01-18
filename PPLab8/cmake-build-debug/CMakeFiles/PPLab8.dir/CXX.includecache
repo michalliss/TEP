@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/legusie/Documents/PWR/TEP/PPLab8/main.cpp
+iostream
+-
+test.h
+/home/legusie/Documents/PWR/TEP/PPLab8/test.h
+
+/home/legusie/Documents/PWR/TEP/PPLab8/test.h
+iostream
+-
+

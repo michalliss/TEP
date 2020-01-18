@@ -1,0 +1,3 @@
+/home/legusie/Documents/PWR/TEP/PPLab8/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/legusie/Documents/PWR/TEP/PPLab8/cmake-build-debug/CMakeFiles/PPLab8.dir
+/home/legusie/Documents/PWR/TEP/PPLab8/cmake-build-debug/CMakeFiles/edit_cache.dir
