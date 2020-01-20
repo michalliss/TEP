@@ -66,6 +66,12 @@ void CSolution::vCalcVector()
     c_xm.vPushToVector(c_vector);
 }
 
+std::ostream& operator<<(std::ostream& os, const CSolution& solution)
+{
+    os << "c_xd: " << solution.c_xd << " c_xf: " << solution.c_xf << " c_xm: " << solution.c_xm;
+    return os;
+}
+
 
 
 

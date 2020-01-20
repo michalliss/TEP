@@ -6,6 +6,7 @@
 #define TEP9__CSOLUTION_H_
 
 #include <vector>
+#include <ostream>
 #include "../CMatrix.h"
 
 struct CSolution {
@@ -25,6 +26,7 @@ struct CSolution {
   bool bLoadFromVector(std::vector<double> vSolution);
   int iLenght();
   void vCalcVector();
+    friend std::ostream& operator<<(std::ostream& os, const CSolution& solution);
 };
 
 #endif //TEP9__CSOLUTION_H_

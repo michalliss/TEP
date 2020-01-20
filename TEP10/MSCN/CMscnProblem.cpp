@@ -259,30 +259,46 @@ bool CMscnProblem::bConstraintsSatisfied(CSolution& cSolution, bool& pb_succ)
 
 bool CMscnProblem::b_constraints_satisfied(CSolution& c_solution)
 {
-    if (!b_minmax_satisfied(c_solution)) return false;
+    if (!b_minmax_satisfied(c_solution)) {
+        return false;
+    }
 
     for (int d = 0; d<i_d; d++) {
-        if (c_solution.c_xd.dRowSum(d)>c_sd(d)) return false;
+        if (c_solution.c_xd.dRowSum(d)>c_sd(d)) {
+            return false;
+        }
     }
 
     for (int f = 0; f<i_f; f++) {
-        if (c_solution.c_xf.dRowSum(f)>c_sf(f)) return false;
+        if (c_solution.c_xf.dRowSum(f)>c_sf(f)) {
+            return false;
+        }
     }
 
     for (int m = 0; m<i_m; m++) {
-        if (c_solution.c_xm.dRowSum(m)>c_sm(m)) return false;
+        if (c_solution.c_xm.dRowSum(m)>c_sm(m)) {
+            return false;
+        }
     }
 
     for (int s = 0; s<i_s; s++) {
-        if (c_solution.c_xm.dColSum(s)>c_ss(s)) return false;
+        if (c_solution.c_xm.dColSum(s)>c_ss(s)) {
+            return false;
+        }
     }
 
     for (int f = 0; f<i_f; f++) {
-        if (c_solution.c_xd.dColSum(f)<c_solution.c_xf.dRowSum(f)) return false;
+        if (c_solution.c_xd.dColSum(f)<c_solution.c_xf.dRowSum(f)) {
+            return false;
+        }
+
     }
 
     for (int m = 0; m<i_m; m++) {
-        if (c_solution.c_xf.dColSum(m)<c_solution.c_xm.dRowSum(m)) return false;
+        if (c_solution.c_xf.dColSum(m)<c_solution.c_xm.dRowSum(m)) {
+            return false;
+        }
+
     }
     return true;
 }
@@ -510,19 +526,20 @@ CMatrix& CMscnProblem::cGetXMminmax()
 double CMscnProblem::dGetQuality(std::vector<double>& vSolution, bool& bSucc)
 {
 
-
-    if(!bTechCheck(vSolution)){
+    if (!bTechCheck(vSolution)) {
         bSucc = false;
         return false;
     }
     bSucc = true;
     CSolution c_solution(i_d, i_f, i_m, i_s);
     c_solution.bLoadFromVector(vSolution);
+    v_repair_solution(c_solution);
+    vSolution = c_solution.c_vector;
     return d_get_quality(c_solution);
 }
 bool CMscnProblem::bConstraintsSatisfied(std::vector<double>& vSolution, bool& bSucc)
 {
-    if(!bTechCheck(vSolution)){
+    if (!bTechCheck(vSolution)) {
         bSucc = false;
         return false;
     }
@@ -534,7 +551,70 @@ bool CMscnProblem::bConstraintsSatisfied(std::vector<double>& vSolution, bool& b
 
 void CMscnProblem::v_repair_solution(CSolution& c_solution)
 {
- 
+
+    if (!b_constraints_satisfied(c_solution)) {
+
+        for (int d = 0; d<i_d; d++) {
+            if (c_solution.c_xd.dRowSum(d)>c_sd(d)) {
+                v_reduce_row(c_solution.c_xd, d, (c_sd(d))/(1+c_solution.c_xd.dRowSum(d)));
+
+            }
+        }
+
+        for (int f = 0; f<i_f; f++) {
+            if (c_solution.c_xf.dRowSum(f)>c_sf(f)) {
+                v_reduce_row(c_solution.c_xf, f, (c_sf(f))/(1+c_solution.c_xf.dRowSum(f)));
+
+            }
+        }
+
+        for (int m = 0; m<i_m; m++) {
+            if (c_solution.c_xm.dRowSum(m)>c_sm(m)) {
+                v_reduce_row(c_solution.c_xm, m, (c_sm(m))/(1+c_solution.c_xm.dRowSum(m)));
+
+            }
+        }
+
+        for (int s = 0; s<i_s; s++) {
+            if (c_solution.c_xm.dColSum(s)>c_ss(s)) {
+                v_reduce_col(c_solution.c_xm, s, (c_ss(s))/(1+c_solution.c_xm.dColSum(s)));
+
+            }
+        }
+
+        for (int f = 0; f<i_f; f++) {
+            if (c_solution.c_xf.dRowSum(f)>c_solution.c_xd.dColSum(f)) {
+                v_reduce_row(c_solution.c_xf, f, (c_solution.c_xd.dColSum(f))/(1.0+c_solution.c_xf.dRowSum(f)));
+
+            }
+        }
+
+        for (int m = 0; m<i_m; m++) {
+            if (c_solution.c_xm.dRowSum(m)>c_solution.c_xf.dColSum(m)) {
+                v_reduce_row(c_solution.c_xm, m, (c_solution.c_xf.dColSum(m))/(1.0+c_solution.c_xm.dRowSum(m)));
+
+            }
+        }
+
+    }
+
+    c_solution.vCalcVector();
+
+}
+
+void CMscnProblem::v_reduce_row(CMatrix& c_matrix, int i_row, double i_value)
+{
+    double div_val = c_matrix.dRowSum(i_row);
+    for (int i = 0; i<c_matrix.iGetCols(); i++) {
+        c_matrix(i_row, i) *= i_value;
+    }
+}
+
+void CMscnProblem::v_reduce_col(CMatrix& c_matrix, int i_col, double i_value)
+{
+    for (int i = 0; i<c_matrix.iGetRows(); i++) {
+        c_matrix(i, i_col) *= i_value;
+    }
 }
 
 int CMscnProblem::getSize()

@@ -197,5 +197,13 @@ std::string CMatrix::sToString()
     return s_output.str();
 }
 
-
-
+std::ostream& operator<<(std::ostream& os, const CMatrix& matrix)
+{
+    for (int i = 0; i<matrix.i_row; i++) {
+        for (int j = 0; j<matrix.i_col; j++) {
+            os << matrix.pd_tab[i][j] << " ";
+        }
+        os << std::endl;
+    }
+    return os;
+}

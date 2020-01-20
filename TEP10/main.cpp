@@ -1,11 +1,11 @@
 #include <iostream>
 #include "MSCN/CMscnProblem.h"
-#include "SOLVE/CRandomSearch.h"
+#include "OPTIMIZER/CRandomSearch.h"
 #include "constants.h"
-#include "SOLVE/CDiffEvol.h"
-#include "Controler/CControlerIter.h"
-#include "Controler/CControlerTime.h"
-void v_test_method(CSolver& c_solver, CProblem& c_problem, CControler& c_controler)
+#include "OPTIMIZER/CDiffEvol.h"
+#include "CONTROLER/CControlerIter.h"
+
+void v_test_method(COptimizer& c_solver, CProblem& c_problem, CControler& c_controler)
 {
     c_solver.bSetProblem(c_problem);
     c_solver.bSetControler(c_controler);
@@ -18,10 +18,12 @@ void v_test_method(CSolver& c_solver, CProblem& c_problem, CControler& c_control
     for (int i = 0; i<v_solution.size(); i++) {
         std::cout << c_problem.getMin(i) << " < " << v_solution[i] << " < " << c_problem.getMax(i) << std::endl;
     }
+
     std::cout << std::endl;
     std::cout << MSG_QUALITY << c_problem.dGetQuality(v_solution, b_succ) << ", " << MSG_SUCCESS << b_succ << std::endl;
     std::cout << MSG_POPRAWNOSC << c_problem.bConstraintsSatisfied(v_solution, b_succ) << ", " << MSG_SUCCESS << b_succ
               << std::endl;
+
 
 }
 
@@ -33,7 +35,7 @@ void runSimulation()
     c_problem.bSave(S_FILE_PROBLEM_SAVE);
 
     //------------------DIFF EVOL----------------------------------------------------
-    CSolver* c_solver = new CDiffEvol(I_SEED);
+    COptimizer* c_solver = new CDiffEvol(I_SEED);
     //CControler* c_controler = new CControlerTime(I_DEFAULT_TIME);
     CControler* c_controler = new CControlerIter(I_DEFAULT_ITERATIONS);
 
@@ -46,6 +48,7 @@ void runSimulation()
     c_solver = new CRandomSearch(I_SEED);
 
     v_test_method(*c_solver, c_problem, *c_controler);
+
 
     delete c_solver;
     delete c_controler;

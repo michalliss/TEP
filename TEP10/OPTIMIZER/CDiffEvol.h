@@ -5,7 +5,7 @@
 #ifndef TEP9_CDIFFEVOL_H
 #define TEP9_CDIFFEVOL_H
 
-#include "CSolver.h"
+#include "COptimizer.h"
 #include "CIndividual.h"
 
 #define I_DEFAULT_POP 10
@@ -14,7 +14,7 @@
 
 #define D_REPAIR_RANGE 0.1
 
-class CDiffEvol : public CSolver {
+class CDiffEvol : public COptimizer {
 public:
     std::vector<double> cSolve() override;
     CDiffEvol();

@@ -6,7 +6,7 @@
 #define TEP9_CRANDOMSEARCH_H
 
 #include "../MSCN/CMscnProblem.h"
-#include "CSolver.h"
+#include "COptimizer.h"
 #include <iostream>
 
 #define I_DX_MIN 100
@@ -17,7 +17,7 @@
 #define I_MX_MAX 500
 #define I_MAX_ITERATIONS 100000
 
-class CRandomSearch : public CSolver{
+class CRandomSearch : public COptimizer{
 private:
     CRandom c_random;
     std::vector<double> c_get_random_good_solution();

@@ -9,6 +9,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <ostream>
 #include "CRandom.h"
 
 class CMatrix {
@@ -46,6 +47,7 @@ public:
     void vPushToVector(std::vector<double>& cVector);
 
     std::string sToString();
+    friend std::ostream& operator<<(std::ostream& os, const CMatrix& matrix);
 
 };
 

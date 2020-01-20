@@ -6,13 +6,13 @@
 #include "CRandomSearch.h"
 
 CRandomSearch::CRandomSearch()
-        :CSolver()
+        :COptimizer()
 {
 
 }
 
 CRandomSearch::CRandomSearch(unsigned long iSeed)
-        :CSolver(), c_random(iSeed)
+        :COptimizer(), c_random(iSeed)
 {
 
 }

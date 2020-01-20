@@ -2,11 +2,40 @@
 // Created by legusie on 1/11/20.
 //
 
+#include <zconf.h>
 #include "CDiffEvol.h"
 #include "CPopulation.h"
+
+CDiffEvol::CDiffEvol()
+        :COptimizer(), i_population_size(I_DEFAULT_POP), d_diff_weight(D_DEFAULT_DIFF), d_cross_prob(D_DEFAULT_CROSS)
+{
+
+}
+
+CDiffEvol::CDiffEvol(int iSeed)
+        :COptimizer(), c_random(iSeed), i_population_size(I_DEFAULT_POP), d_diff_weight(D_DEFAULT_DIFF),
+         d_cross_prob(D_DEFAULT_CROSS)
+{
+
+}
+
+CDiffEvol::CDiffEvol(int iSeed, int iPopulation, double dCross, double dDiff)
+        :COptimizer(), c_random(iSeed), i_population_size(iPopulation), d_cross_prob(dCross), d_diff_weight(dDiff)
+{
+
+}
+CDiffEvol::CDiffEvol(int iPopulation, double dCross, double dDiff)
+        :COptimizer(), i_population_size(iPopulation), d_cross_prob(dCross), d_diff_weight(dDiff)
+{
+
+}
+
 std::vector<double> CDiffEvol::cSolve()
 {
     CPopulation c_population(i_population_size, *pc_problem, c_random);
+
+
+
     std::cout << "populacja gotowa" << std::endl;
 
     pc_controller->vStart();
@@ -32,14 +61,13 @@ std::vector<double> CDiffEvol::cSolve()
                 bool b_succ;
 
                 v_repair_genotype(c_new);
-
                 pc_controller->vUpdate();
-                if (pc_problem->bConstraintsSatisfied(c_new.v_genotype, b_succ)
-                        && pc_problem->dGetQuality(c_new.v_genotype, b_succ)
-                                >pc_problem->dGetQuality(c_ind.v_genotype, b_succ)) {
-                    //std::cout << "poprawa";
+                if (pc_problem->dGetQuality(c_new.v_genotype, b_succ)
+                         > pc_problem->dGetQuality(c_ind.v_genotype, b_succ)) {
                     c_ind = c_new;
                 }
+
+
             }
         }
     }
@@ -59,30 +87,6 @@ void CDiffEvol::v_repair_genotype(CIndividual& c_individual)
                     -D_REPAIR_RANGE*c_random.dGetDouble(pc_problem->getMin(i), pc_problem->getMax(i));
         }
     }
-}
-
-CDiffEvol::CDiffEvol()
-        :CSolver(), i_population_size(I_DEFAULT_POP), d_diff_weight(D_DEFAULT_DIFF), d_cross_prob(D_DEFAULT_CROSS)
-{
-
-}
-
-CDiffEvol::CDiffEvol(int iSeed)
-        :CSolver(), c_random(iSeed), i_population_size(I_DEFAULT_POP), d_diff_weight(D_DEFAULT_DIFF),
-         d_cross_prob(D_DEFAULT_CROSS)
-{
-
-}
-
-CDiffEvol::CDiffEvol(int iSeed, int iPopulation, double dCross, double dDiff)
-        :CSolver(), c_random(iSeed), i_population_size(iPopulation), d_cross_prob(dCross), d_diff_weight(dDiff)
-{
-
-}
-CDiffEvol::CDiffEvol(int iPopulation, double dCross, double dDiff)
-        :CSolver(), i_population_size(iPopulation), d_cross_prob(dCross), d_diff_weight(dDiff)
-{
-
 }
 
 

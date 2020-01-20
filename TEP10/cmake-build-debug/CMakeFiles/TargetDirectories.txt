@@ -1,3 +1,3 @@
-/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir
-/home/legusie/Documents/PWR/TEP/TEP10/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/legusie/GIT/TEP/TEP10/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/legusie/GIT/TEP/TEP10/cmake-build-debug/CMakeFiles/TEP9.dir
+/home/legusie/GIT/TEP/TEP10/cmake-build-debug/CMakeFiles/edit_cache.dir

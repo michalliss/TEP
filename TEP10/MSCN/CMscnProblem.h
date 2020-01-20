@@ -107,6 +107,16 @@ public:
     bool bConstraintsSatisfied(std::vector<double>& vector, bool& bSucc) override;
     int getSize() override;
 
+    void v_reduce_row(CMatrix& c_matrix, int i_row);
+    void v_reduce_row(CMatrix& c_matrix, int i_row, int i_value);
+    void v_reduce_row(CMatrix& c_matrix, int i_row, double i_value);
+    void v_reduce_col(CMatrix& c_matrix, int i_col, double i_value);
+    double d_max(CSolution c_solution, int i_row, int i_col);
+    double f_max(CSolution c_solution, int i_row, int i_col);
+    double m_max(CSolution c_solution, int i_row, int i_col);
+    double s_max(CSolution c_solution, int i_row, int i_col);
+    double xf_max(CSolution c_solution, int i_row, int i_col);
+    double xm_max(CSolution c_solution, int i_row, int i_col);
 };
 
 #endif //TEP9__CMSCNPROBLEM_H_
